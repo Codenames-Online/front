@@ -226,3 +226,43 @@ body[user-team="red"] {
 		}
 	}
 }
+
+.window-overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.25);
+
+	.overlay-msg {
+		display: none;
+		background: white;
+		padding: 5px;
+		margin: 200px auto 0px auto;
+		width: 50%;
+		padding: 20px 40px;
+
+		&#verify-clue {
+			.btn {
+				margin-top: 10px;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.btn {
+	background-color: lightgrey;
+	display: inline-block;
+	min-width: 100px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+
+	&.green { background-color: green; }
+	&.red { background-color: red; }
+}
