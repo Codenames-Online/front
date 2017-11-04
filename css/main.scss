@@ -44,6 +44,14 @@ header {
 		display: grid;
 		background: yellow;
 		align-items: center;
+		border-radius: 4px;
+
+		&[data-agent] {
+			border: solid 4px;
+		}
+		&[data-agent="blue"] { border-color: blue; }
+		&[data-agent="red"] { border-color: red; }
+		&[data-agent="black"] { border-color: black; }
 
 		span { text-align: center; }
 	}
