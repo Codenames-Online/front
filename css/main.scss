@@ -28,12 +28,13 @@ header {
 
 .game-interface {
 	display: grid;
-	grid-template-columns: 20% 60% 20%;
+	grid-template-columns: 1fr 62vw 1fr;
 }
 
 .board {
-	padding: 20px;
+	padding: 1vh;
 	display: grid;
+	height: 40vw; /* 60vw/1.5 to get 3 by 2 cards */
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 5px;
@@ -71,10 +72,11 @@ header {
 }
 
 .chat {
+	display: grid;
+	grid-template-rows: 80px 74vh 30px;
 	background-color: grey;
-	padding: 40px;
 
-	h1 { margin: 0px 0px 10px 0px; }
+	h1 { margin: 40px 40px 10px 40px; }
 	.msg {
 		background-color: white;
 		border-radius: 10px;
@@ -102,6 +104,34 @@ header {
 			.author { display: none; }
 			&[data-team="blue"] { background-color: $blue; }
 			&[data-team="red"] { background-color: $red; }
+		}
+	}
+	.msg-cont { 
+		background-color: lightgrey;
+		padding: 10px 40px;
+		overflow-y: scroll;
+	}
+	.send-msg {
+		padding: 20px 40px;
+
+		input[type="text"] {
+			width: 100%;
+			height: 35px;
+			border-radius: 5px;
+			border: 0px;
+			padding: 10px;
+		}
+		input[type="submit"] {
+			width: 100%;
+			background-color: green;
+			color: white;
+			box-shadow: none;
+			border: none;
+			border-radius: 10px;
+			margin-top: 10px;
+			padding: 10px;
+			font-size: 15px;
+			text-align: left;
 		}
 	}
 }
