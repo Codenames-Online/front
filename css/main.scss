@@ -73,7 +73,8 @@ header {
 
 .chat {
 	display: grid;
-	grid-template-rows: 80px 74vh 30px;
+	grid-template-rows: 80px 1fr 120px;
+	height: calc(100vh - 50px);
 	background-color: grey;
 
 	h1 { margin: 40px 40px 10px 40px; }
