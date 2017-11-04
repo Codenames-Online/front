@@ -7,8 +7,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
-<body>
-	<header data-team="blue">Samantha | Operative</header>
+<body user-team="blue">
+	<header>Samantha | Operative</header>
 	<div class="game-interface">
 		<div class="score-board">
 			<h2 class="title">Cards Left</h2>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="board">
 			{% for i in (1..25) %}
-				<div class="card selectable" user-team="blue">
+				<div class="card selectable">
 					<span>Codename</span>
 					<div class="overlay">
 						<div class="icon-cont"></div>

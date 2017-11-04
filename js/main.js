@@ -18,6 +18,13 @@ function selectCard() {
 		$(this).find('.icon-cont').append('<div class="self-select red"></div>');
 }
 
+function switchTeams() {
+	if($('body').attr('user-team') == "blue")
+		$('body').attr('user-team', 'red');
+	else
+		$('body').attr('user-team', 'blue');
+}
+
 function selectCardTeam(event) {
 	$(this).addClass('selected team');
 

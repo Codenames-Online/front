@@ -21,9 +21,30 @@ header {
 	align-items: center;
 	padding-left: 20px;
 	color: white;
+}
 
-	&[data-team="blue"] { background-color: $blue; }
-	&[data-team="red"] { background-color: $red; }
+/* Team specific styling */
+body[user-team="blue"] {
+	header { background-color: $blue; }
+	
+	/* Team specific voting styling */
+	.card.selected .overlay {
+		background-color: rgba($blue, 0.25);
+
+		.team-select { background-image: url(../imgs/checkbox-checked-blue.svg); }
+		.self-select { background-image: url(../imgs/stars-blue.svg); }
+	}
+}
+body[user-team="red"] {
+	header {background-color: $red; }
+
+	/* Team specific voting styling */
+	.card.selected .overlay {
+		background-color: rgba($red, 0.25);
+
+		.team-select { background-image: url(../imgs/checkbox-checked-red.svg); }
+		.self-select { background-image: url(../imgs/stars-red.svg); }
+	}
 }
 
 /* Grid locations for the game interface */
@@ -106,18 +127,6 @@ header {
 		}
 		&.selected {
 			.overlay { display: block; }
-			&[user-team="blue"] .overlay {
-				background-color: rgba($blue, 0.25);
-
-				.team-select { background-image: url(../imgs/checkbox-checked-blue.svg); }
-				.self-select { background-image: url(../imgs/stars-blue.svg); }
-			}
-			&[user-team="red"] .overlay {
-				background-color: rgba($red, 0.25);
-
-				.team-select { background-image: url(../imgs/checkbox-checked-red.svg); }
-				.self-select { background-image: url(../imgs/stars-red.svg); }
-			}
 		}
 
 		/* Admin styling to show the true card color */
