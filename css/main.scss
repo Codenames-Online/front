@@ -262,7 +262,89 @@ body[user-team="red"] {
 	text-align: center;
 	font-weight: bold;
 	color: white;
+	cursor: pointer;
 
 	&.green { background-color: green; }
 	&.red { background-color: red; }
+}
+
+/* Registration specific styling */
+.registration-cont {
+	margin: 25% auto;
+	width: 50%;
+	max-width: 500px;
+	text-align: center;
+
+	.text {
+		font-size: 22px;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+	input {
+		width: 100%;
+		height: 50px;
+		font-size: 24px;
+		padding: 10px;
+	}
+	.btn {
+		margin-top: 10px;
+		font-size: 24px;
+		width: 40%;
+	}
+}
+
+.roster-page { display: none; }
+.roster-cont {
+	display: grid;
+	grid-template-rows: 1fr 100px 100px;
+	grid-template-columns: 1fr 20% 10% 20% 1fr;
+
+	.roster {
+		padding: 20px 0px;
+		margin: 40px 0px;
+		color: white;
+		min-height: 250px;
+
+		&.blue {
+			background-color: $blue;
+
+			.player.self { color: $blue; }
+		}
+		&.red {
+			background-color: $red;
+			
+			.player.self { color: $red; }
+		}
+		.title {
+			padding: 0px 30px;
+			font-size: 20px;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+		.player {
+			padding: 4px 30px;
+
+			&.self { background-color: white; }
+		}
+	}
+	.roster.blue {
+		grid-column-start: 2;
+		grid-row-start: 1;
+	}
+	.roster.red {
+		grid-column-start: 4;
+		grid-row-start: 1;
+	}
+	.btn {
+		grid-column-start: 2;
+		grid-column-end: 5;
+		height: 25px;
+		align-self: center;
+		font-size: 20px;
+		width: 60%;
+		margin: auto;
+
+		&:first-child { grid-row-start: 2; }
+		&:last-child { grid-row-start: 3; }
+	}
 }

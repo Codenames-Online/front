@@ -4,7 +4,31 @@ var myTeam = "blue";
 $(document).ready(function() {
 	$('.card').click(selectCard);
 	$('.card').contextmenu(selectCardTeam);
+	$('.registration-cont .btn').click(goToRoster);
+	$('#switch-teams').click(switchRosterTeam);
 });
+
+function goToRoster() {
+	$('.registration-cont').fadeOut(function() {
+		$('.roster-page').fadeIn();
+	});
+
+	var name = $('.registration-cont input').val();
+	$('.blue.roster .players').prepend('<div class="player self">' + name + '</div>');
+}
+
+function switchRosterTeam() {
+	var player = $('.player.self').clone();
+
+	if($('.roster.blue .player.self').length > 0) { // if on blue team
+		$('.player.self').remove();
+		$('.roster.red .players').prepend(player);
+	}
+	else {
+		$('.player.self').remove();
+		$('.roster.blue .players').prepend(player);
+	}
+}
 
 function selectCard() {
 	$('.card.selected.self .self-select').remove(); // delete self select icon
