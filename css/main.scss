@@ -34,7 +34,7 @@ header {
 .board {
 	padding: 1vh;
 	display: grid;
-	height: 40vw; /* 60vw/1.5 to get 3 by 2 cards */
+	max-height: 40vw; /* 60vw/1.5 to get 3 by 2 cards */
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 5px;
