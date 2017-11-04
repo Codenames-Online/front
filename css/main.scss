@@ -26,9 +26,40 @@ header {
 	&[data-team="red"] { background-color: $red; }
 }
 
+/* Grid locations for the game interface */
 .game-interface {
 	display: grid;
 	grid-template-columns: 1fr 62vw 1fr;
+	grid-template-rows: 55px 1fr;
+
+	.score-board { grid-column-start: 1; }
+	.hint { grid-column-start: 2; }
+	.board { grid-column-start: 2; }
+	.chat {
+		grid-column-start: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+}
+
+
+.hint {
+	background: lightgrey;
+	margin: 1vh 1vh 0vh 1vh;
+	padding: 10px;
+
+	.team, .guesses, .clue { font-weight: bold; font-size: 1.2em; }
+
+	&[data-team="blue"] {
+		border-bottom: solid 5px $blue;
+
+		.team { color: $blue; }
+	}
+	&[data-team="red"] {
+		border-bottom: solid 5px $red;
+
+		.team { color: $red; }
+	}
 }
 
 .board {
