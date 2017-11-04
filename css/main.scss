@@ -1,0 +1,107 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+// Add your styles here
+
+$blue: #4343ff;
+$red: #f44336;
+
+body {
+	font-family: Arial;
+	padding: 0px;
+	margin: 0px;
+
+	display: grid;
+	grid-template-rows: 50px 100%;
+}
+
+header {
+	display: grid;
+	align-items: center;
+	padding-left: 20px;
+	color: white;
+
+	&[data-team="blue"] { background-color: $blue; }
+	&[data-team="red"] { background-color: $red; }
+}
+
+.game-interface {
+	display: grid;
+	grid-template-columns: 20% 60% 20%;
+}
+
+.board {
+	padding: 20px;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+
+	.card {
+		display: grid;
+		background: yellow;
+		align-items: center;
+
+		span { text-align: center; }
+	}
+}
+
+.score-board {
+	margin-top: 50%;
+
+	.title { text-align: center; }
+	.score-cont {
+		display: grid;
+		grid-template-columns: 45% 2px 45%;
+		height: 10%;
+		align-items: center;
+
+		.divider {
+			height: 100%;
+			background-color: black;
+		}
+		:first-child { text-align: right; margin-right: 10px; }
+		:last-child { text-align: left; margin-left: 10px; }
+		.blue { color: $blue; }
+		.red { color: $red; }
+		.score { font-size: 48px; }
+	}
+}
+
+.chat {
+	background-color: grey;
+	padding: 40px;
+
+	h1 { margin: 0px 0px 10px 0px; }
+	.msg {
+		background-color: white;
+		border-radius: 10px;
+		margin-bottom: 10px;
+
+		.body { padding: 10px; }
+		.author {
+			width: 100%;
+			color: white;
+			text-align: right;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			padding: 5px 10px;
+			box-sizing: border-box;
+			font-size: 14px;
+		}
+		&[data-team="blue"] .author { background-color: $blue; }
+		&[data-team="red"] .author { background-color: $red; }
+		
+		/* if the current user sent the message, hide author and 
+		make the whole thing the color of their team */
+		&[data-self="true"] {
+			color: white;
+
+			.author { display: none; }
+			&[data-team="blue"] { background-color: $blue; }
+			&[data-team="red"] { background-color: $red; }
+		}
+	}
+}

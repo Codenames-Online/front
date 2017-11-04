@@ -1,0 +1,50 @@
+---
+---
+
+<head>
+	<title>Codenames Styling Demo</title>
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+	<header data-team="blue">Samantha | Operative</header>
+	<div class="game-interface">
+		<div class="score-board">
+			<h2 class="title">Cards Left</h2>
+			<div class="score-cont">
+				<span class="score red">8</span>
+				<div class="divider"></div>
+				<span class="score blue">9</span>
+			</div>
+		</div>
+		<div class="board">
+			{% for i in (1..25) %}
+				<div class="card">
+					<span>Codename</span>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="chat">
+			<h1>Chat</h1>
+			<div class="msg" data-team="red">
+				<div class="body">What do they mean by metals?</div>
+				<div class="author">Jane</div>
+			</div>
+			<div class="msg" data-team="red">
+				<div class="body">Pretty sure they mean the metals in the periodic table. That's the easiest explanation.</div>
+				<div class="author">Elizabeth</div>
+			</div>
+			<div class="msg" data-team="blue" data-self="true">
+				<div class="body">Or do they mean METAL, like the genre of music?</div>
+				<div class="author">Samantha</div>
+			</div>
+			<div class="msg" data-team="blue">
+				<div class="body">Yeah that is totally it.</div>
+				<div class="author">Nancy</div>
+			</div>
+			<div class="msg" data-team="red">
+				<div class="body">...yeah. Sure.</div>
+				<div class="author">Jane</div>
+			</div>
+		</div>
+	</div>
+</body>
