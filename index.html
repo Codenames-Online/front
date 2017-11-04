@@ -23,8 +23,11 @@
 		</div>
 		<div class="board">
 			{% for i in (1..25) %}
-				<div class="card">
+				<div class="card selectable" user-team="blue">
 					<span>Codename</span>
+					<div class="overlay">
+						<div class="icon-cont"></div>
+					</div>
 				</div>
 			{% endfor %}
 		</div>
