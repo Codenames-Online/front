@@ -9,7 +9,7 @@ function updateRoster(teams) {
 	for(var i = 0; i < blueRoster.length; i++) {
 		appendToRoster('blue', blueRoster[i]);
 	}
-	
+
 	for(var i = 0; i < redRoster.length; i++) {
 		appendToRoster('red', redRoster[i]);
 	}
@@ -34,12 +34,18 @@ function switchRosterTeam() {
 }
 
 function goToGame() {
+  $('.roster-page-cont').fadeOut(function() {
+    $('.game-page-cont').fadeIn();
+  });
+}
+
+function startGameClick() {
 	if(!$('#start-game').hasClass('disabled')) { // if button is not disabled
 		$('.roster-page-cont').fadeOut(function() {
 			$('.game-page-cont').fadeIn();
 		});
 
-		sendSocket({action: 'startGame' });
+		sendSocket({ action: 'startGame' });
 	}
 }
 
