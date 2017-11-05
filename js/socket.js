@@ -29,6 +29,7 @@ function handleMessage(message) {
 			changeTurn(message.team);
 			break;
 		case "postClue":
+			console.log("Clue" + JSON.stringify(message.clue));
 			showGuessPanel(message.team, message.clue);
 			break;
 		case "promptForClue":
@@ -55,6 +56,9 @@ function handleMessage(message) {
 			break;
 		case "switchActiveTeam":
 			changeTurn(message.team);
+			break;
+		case "gameStarted":
+			setHeader(message.startTeam);
 			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
