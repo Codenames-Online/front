@@ -26,5 +26,20 @@ function drawBoard(board) {
 	
 	// Add selection by class .selected and appending div.team-select or div.self-select into .overlay .icon-cont 
 	// Add data-agent for colors and data-revealed to revealed cards
+}
 
+function sendMessage() {
+	var message = $('.send-msg input').val();
+	socket.send({ action: "sendMessage", message: message });
+}
+
+function addMessage(message, name, team) {
+	let teamString = team === RED ? "red" : "blue";
+	let maybeSelf = name === me.name ? ' data-self="true"' : "";
+	$('.chat .msg-cont').append(
+		`<div class="msg" data-team="${teamString}"${maybeSelf}>
+			<div class="body">${message}</div>
+			<div class="author">${name}</div>
+		</div>`
+	);
 }
