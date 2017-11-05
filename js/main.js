@@ -38,6 +38,26 @@ function goToRoster() {
 	socket.send({ action: "setName", name: val });
 }
 
-function updateRoster() {
+// @param teams - {blue: [String], red: [String]} contains two arrays of String names
+function updateRoster(teams) {
+	var blueRoster = teams.blue.sort();
+	var redRoster = teams.red.sort();
 
+	// Clear old rosters by clearing all player objects in rosters
+	$('.players .player').remove()
+
+	for(var i = 0; i < blueRoster.length; i++) {
+		appendToRoster('blue', blueRoster[i]);
+	}
+	
+	for(var i = 0; i < redRoster.length; i++) {
+		appendToRoster('red', redRoster[i]);
+	}
+
+	function appendToRoster(team, name) {
+		if(me && name == me.name)
+			$('.roster.' + team + ' .players').append('<div class="player self">' + name + '</div>');
+		else
+			$('.roster.' + team + ' .players').append('<div class="player">' + name + '</div>');
+	}
 }
