@@ -8,6 +8,7 @@
 	<script src="js/temp-data.js"></script>
 	<script src="js/utils.js"></script>
 	<script src="js/constants.js"></script>
+	<script src="js/overlays.js"></script>
 	<script src="js/registration.js"></script>
 	<script src="js/roster.js"></script>
 	<script src="js/game.js"></script>
@@ -86,18 +87,9 @@
 	</div>
 	<div class="window-overlay">
 		<div class="overlay-msg" id="not-in-dict">
-			That word isn’t in our dictionary - the opposing spymaster is
-			confirming that this is a valid clue.
+			That word isn’t in our dictionary. Please try again!
 			<br><br>
-			This message will close when the opposing spymaster responds.
-		</div>
-		<div class="overlay-msg" id="verify-clue">
-			The opposing spymaster wants to give the clue:
-			<h3>Rapunzel</h3>
-			Is this a valid clue?
-			<br>
-			<div class="btn red">No</div>
-			<div class="btn green">Yes</div>
+			<div class="btn red close-overlay">Close</div>
 		</div>
 	</div>
 </body>

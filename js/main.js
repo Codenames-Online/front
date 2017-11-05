@@ -9,4 +9,5 @@ $(document).ready(function() {
 	$('#start-game').click(startGameClick);
 	$('.send-msg input[type="submit"]').click(sendMessage);
 	$('.game-page-cont input[type="text"]').enterPress(sendMessage);
+	$('.close-overlay').click(closeOverlay);
 });

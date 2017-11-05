@@ -34,17 +34,15 @@ function switchRosterTeam() {
 }
 
 function goToGame() {
-  $('.roster-page-cont').fadeOut(function() {
-    $('.game-page-cont').fadeIn();
-  });
+	if($('.game-page-cont:hidden').length > 0) {
+		$('.roster-page-cont').hide();
+		$('.game-page-cont').fadeIn();
+	}
 }
 
 function startGameClick() {
 	if(!$('#start-game').hasClass('disabled')) { // if button is not disabled
-		$('.roster-page-cont').fadeOut(function() {
-			$('.game-page-cont').fadeIn();
-		});
-
+		goToGame();
 		sendSocket({ action: 'startGame' });
 	}
 }

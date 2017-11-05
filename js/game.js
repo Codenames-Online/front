@@ -101,3 +101,8 @@ function sendClue() {
 
 	sendSocket(data);
 }
+
+// Occurs if spymaster tries to submit invalid clue
+function invalidClue() {
+	showOverlay('not-in-dict');
+}

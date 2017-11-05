@@ -48,6 +48,9 @@ function handleMessage(message) {
 			goToGame();
 			setMe(message.player);
 			break;
+		case "invalidClue":
+			invalidClue();
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
