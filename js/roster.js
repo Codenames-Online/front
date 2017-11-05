@@ -35,9 +35,8 @@ function switchRosterTeam() {
 
 function goToGame() {
 	if($('.game-page-cont:hidden').length > 0) {
-		$('.roster-page-cont').fadeOut(function() {
-			$('.game-page-cont').fadeIn();
-		});
+		$('.roster-page-cont').hide();
+		$('.game-page-cont').fadeIn();
 	}
 }
 
