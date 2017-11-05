@@ -48,8 +48,10 @@ function drawBoard(board) {
 			$card.attr('data-agent', 'red');
 		else if(currColor == ASSASSIN)
 			$card.attr('data-agent', 'black');
+		else if(currColor == NEUTRAL)
+			$card.attr('data-agent', 'neutral');
 
-		if($card.revealed)
+		if(currCard.revealed)
 			$card.attr('data-revealed', 'true')
 	}
 	
