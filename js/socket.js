@@ -24,6 +24,9 @@ function handleMessage(message) {
 		case "updateLoiterer":
 			setMe(message.person);
 			break;
+		case "addMessage":
+			addMessage(message.message, message.name, message.team);
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}

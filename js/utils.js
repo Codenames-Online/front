@@ -7,3 +7,7 @@ $.fn.enterPress = function (callback) {
 };
 
 function setMe(newMe) { me = newMe; }
+
+function isMyTurn(turn, color) {
+	return me.team === color && me.role === turn;
+}
