@@ -23,3 +23,16 @@ function updateRoster(teams) {
 function switchRosterTeam() {
 	sendSocket({ action: "switchTeam" });
 }
+
+function goToGame() {
+	$('.roster-page-cont').fadeOut(function() {
+		$('.game-page-cont').fadeIn();
+	});
+
+	sendSocket({action: 'startGame' });
+}
+
+// Gets a boolean from the backend saying if we have enough people to start
+function setGameReady(ready) {
+	$('#start-game').attr('disabled', ready);
+}

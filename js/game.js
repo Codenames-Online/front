@@ -1,9 +1,3 @@
-function goToGame() {
-	$('.roster-page-cont').fadeOut(function() {
-		$('.game-page-cont').fadeIn();
-	});	
-}
-
 // Takes in {cards: Card[], colors: number[], startTeam: team}
 // Each card is {word: string, votes: string[], revealed: boolean}
 // Colors are of form `{0: blue, 1: red, 2: bystander, 3: assassin}`
@@ -99,6 +93,5 @@ function sendClue() {
 		action: 'sendClue'
 	}
 
-	console.log(data);
 	sendSocket(data);
 }

@@ -35,6 +35,9 @@ function handleMessage(message) {
 		case "promptForClue":
 			showClueInput();
 			break;
+		case "toggleStartButton":
+			setGameReady(message.enable);
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
