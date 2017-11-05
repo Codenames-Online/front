@@ -30,9 +30,7 @@ function setMe(newMe) {
 	}
 }
 
-function isMyTurn(turn, color) {
-	return me.team === color && me.role === turn;
-}
+function isMyTurn(turn, color) { return me.team === color && me.role === turn; }
 
 function capitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
@@ -46,7 +44,7 @@ function getTeamString(team, upper) {
 function getHeader(team, clue) {
 	let teamInfo = `<span class="team">${getTeamString(team, true)} Team</span>`;
 	let headerMessage = clue
-		? ` guessing on: <span class="clue-word">${clue.word}</span>. Remaining guesses: <span class="guesses">${clue.guesses}</span>`
+		? ` guessing on: <span class="clue-word">${clue.word}</span>. Remaining guesses: <span class="guesses">${clue.num}</span>`
 		: ` spymaster is working on a clue`;
 
 	return teamInfo + headerMessage;
