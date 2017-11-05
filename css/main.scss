@@ -55,6 +55,14 @@ body[user-team="red"] {
 	}
 }
 
+/* Role specific styling */
+body[user-role="spymaster"] {
+	.send-msg input { display: none; }
+}
+body[user-role="operatives"] {
+	.send-msg .cant-send-msg { display: none; }
+}
+
 /* Grid locations for the game interface */
 .game-interface {
 	display: grid;
@@ -250,6 +258,9 @@ body[user-team="red"] {
 			padding: 10px;
 			font-size: 15px;
 			text-align: left;
+		}
+		.cant-send-msg {
+			margin-top: 15px;
 		}
 	}
 }

@@ -18,6 +18,16 @@ function setMe(newMe) {
 
 	// Update name in header
 	$('header .name').text(me.name);
+
+	// Update role in header
+	if(me.role == SPY) {
+		$('body').attr('user-role', 'spymaster');
+		$('header .role').text('Spymaster');
+	}
+	else if(me.role == OP) {
+		$('body').attr('user-role', 'operatives');
+		$('header .role').text('Operatives');
+	}
 }
 
 function isMyTurn(turn, color) {
