@@ -49,6 +49,9 @@ function handleMessage(message) {
 		case "invalidClue":
 			invalidClue();
 			break;
+		case "allowGuess":
+			allowGuess(message.bool);
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}

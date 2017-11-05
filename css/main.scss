@@ -84,6 +84,7 @@ body[user-role="operatives"] {
 		grid-row-end: 2;
 	}
 	.guess-panel {
+		display: none;
 		grid-row-start: 3;
 		grid-column-start: 2;
 	}

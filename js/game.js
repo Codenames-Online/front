@@ -115,11 +115,25 @@ function invalidClue() {
 // Shows the panel for submitting a guess
 function showGuessPanel(team, clue) {
 	setHeader(team, clue);
-	
+
+	$('.guess-panel .btn').addClass('disabled'); // start with the button disabled, since no one has voted
+
 	if(me.team == team && me.role == OP)
 		$('.guess-panel').show();
 	else
 		$('.guess-panel').hide();
+}
+
+function submitGuess() {
+	if($('.guess-panel .btn.disabled').length == 0) // submit if button is not disabled
+		sendSocket({action: "submitGuess"});
+}
+
+function allowGuess(bool) {
+	if(bool)
+		$('.guess-panel .btn').removeClass('disabled')
+	else
+		$('.guess-panel .btn').addClass('disabled')
 }
 
 function selectCard() {
