@@ -1,4 +1,4 @@
-// Takes in {cards: Card[], colors: number[], startTeam: team}
+// Takes in [[color, Card],[color,Card]]
 // Each card is {word: string, votes: string[], revealed: boolean}
 // Colors are of form `{0: blue, 1: red, 2: bystander, 3: assassin}`
 function drawBoard(board) {
@@ -7,9 +7,9 @@ function drawBoard(board) {
 
 	var currCard, currColor, $card, $iconCont;
 
-	for(var i = 0; i < board.cards.length; i++) {
-		currCard = board.cards[i];
-		currColor = board.colors[i];
+	for(var i = 0; i < board.length; i++) {
+		currColor = board[i][0];
+		currCard = board[i][1];
 
 		// Add each card using the word
 		$('.board').append('<div class="card selectable">' +

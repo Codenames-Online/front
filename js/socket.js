@@ -41,9 +41,12 @@ function handleMessage(message) {
 		case "updateScore":
 			setScore(message.score);
 			break;
+		case "updateBoard":
+			drawBoard(message.board);
+			break;
 		case "updateLoitererToPlayer":
 			goToGame();
-      setMe(message.player);
+			setMe(message.player);
 			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
