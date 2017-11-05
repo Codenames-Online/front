@@ -11,10 +11,15 @@ body {
 	font-family: Arial;
 	padding: 0px;
 	margin: 0px;
+}
 
+/* Main pages */
+.game-page-cont { display: none; }
+.game-page {
 	display: grid;
 	grid-template-rows: 50px 100%;
 }
+.roster-page-cont { display: none; }
 
 header {
 	display: grid;
@@ -269,7 +274,7 @@ body[user-team="red"] {
 }
 
 /* Registration specific styling */
-.registration-cont {
+.registration-page-cont {
 	margin: 25% auto;
 	width: 50%;
 	max-width: 500px;
@@ -293,7 +298,6 @@ body[user-team="red"] {
 	}
 }
 
-.roster-page { display: none; }
 .roster-cont {
 	display: grid;
 	grid-template-rows: 1fr 100px 100px;

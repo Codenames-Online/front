@@ -8,92 +8,126 @@
 	<script src="js/main.js"></script>
 </head>
 <body user-team="blue">
-	<header>Samantha | Operative</header>
-	<div class="game-interface">
-		<div class="score-board">
-			<h2 class="title">Cards Left</h2>
-			<div class="score-cont">
-				<span class="score red">8</span>
-				<div class="divider"></div>
-				<span class="score blue">9</span>
+	<!-- Section 1: Registration -->
+	<div class="registration-page-cont">
+		<div class="text">What is your name?</div>
+		<input type="text" placeholder="Enter your name">
+		<div class="btn green">Enter</div>
+	</div>
+	<!-- Section 2: Roster Page -->
+	<div class="roster-page-cont">
+		<div class="roster-cont">
+			<div class="blue roster">
+				<div class="title">Blue Team</div>
+				<div class="players">
+					<div class="player">Nancy</div>
+					<div class="player">Jessica</div>
+					<div class="player">Lily</div>
+				</div>
 			</div>
+			<div class="red roster">
+				<div class="title">Red Team</div>
+				<div class="players">
+					<div class="player">Jane</div>
+					<div class="player">Elizabeth</div>
+					<div class="player">Mary</div>
+					<div class="player">Jennie</div>
+				</div>
+			</div>
+			<div class="btn green" id="switch-teams">Switch Teams</div>
+			<div class="btn green">Start</div>
 		</div>
-		<div class="hint" data-team="red">
-			<span class="team">Red Team</span> guessing on: <span class="clue">Rapunzel</span>. Remaining guesses: <span class="guesses">4</span>
-		</div>
-		<div class="board">
-			{% for i in (1..25) %}
-				<div class="card selectable">
-					<span>Codename</span>
-					<div class="overlay">
-						<div class="icon-cont"></div>
+	</div>
+	<!-- Section 3: Game interface -->
+	<div class="game-page-cont">
+		<div class="game-page">
+			<header>Samantha | Operative</header>
+			<div class="game-interface">
+				<div class="score-board">
+					<h2 class="title">Cards Left</h2>
+					<div class="score-cont">
+						<span class="score red">8</span>
+						<div class="divider"></div>
+						<span class="score blue">9</span>
 					</div>
 				</div>
-			{% endfor %}
-		</div>
-		<div class="chat">
-			<h1>Chat</h1>
-			<div class="msg-cont">
-				<div class="msg" data-team="red">
-					<div class="body">What do they mean by metals?</div>
-					<div class="author">Jane</div>
+				<div class="hint" data-team="red">
+					<span class="team">Red Team</span> guessing on: <span class="clue">Rapunzel</span>. Remaining guesses: <span class="guesses">4</span>
 				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Pretty sure they mean the metals in the periodic table. That's the easiest explanation.</div>
-					<div class="author">Elizabeth</div>
+				<div class="board">
+					{% for i in (1..25) %}
+						<div class="card selectable">
+							<span>Codename</span>
+							<div class="overlay">
+								<div class="icon-cont"></div>
+							</div>
+						</div>
+					{% endfor %}
 				</div>
-				<div class="msg" data-team="blue" data-self="true">
-					<div class="body">Or do they mean METAL, like the genre of music?</div>
-					<div class="author">Samantha</div>
+				<div class="chat">
+					<h1>Chat</h1>
+					<div class="msg-cont">
+						<div class="msg" data-team="red">
+							<div class="body">What do they mean by metals?</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Pretty sure they mean the metals in the periodic table. That's the easiest explanation.</div>
+							<div class="author">Elizabeth</div>
+						</div>
+						<div class="msg" data-team="blue" data-self="true">
+							<div class="body">Or do they mean METAL, like the genre of music?</div>
+							<div class="author">Samantha</div>
+						</div>
+						<div class="msg" data-team="blue">
+							<div class="body">Yeah that is totally it.</div>
+							<div class="author">Nancy</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">...yeah. Sure.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+						<div class="msg" data-team="red">
+							<div class="body">Lorem ipsum dolor sit amet.</div>
+							<div class="author">Jane</div>
+						</div>
+					</div>
+					<div class="send-msg">
+						<input type="text" placeholder="Type a message">
+						<input type="submit" value="Send Message">
+					</div>
 				</div>
-				<div class="msg" data-team="blue">
-					<div class="body">Yeah that is totally it.</div>
-					<div class="author">Nancy</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">...yeah. Sure.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-				<div class="msg" data-team="red">
-					<div class="body">Lorem ipsum dolor sit amet.</div>
-					<div class="author">Jane</div>
-				</div>
-			</div>
-			<div class="send-msg">
-				<input type="text" placeholder="Type a message">
-				<input type="submit" value="Send Message">
 			</div>
 		</div>
 	</div>
-
 	<div class="window-overlay">
 		<div class="overlay-msg" id="not-in-dict">
 			That word isn’t in our dictionary - the opposing spymaster is
