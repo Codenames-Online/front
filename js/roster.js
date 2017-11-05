@@ -21,5 +21,5 @@ function updateRoster(teams) {
 }
 
 function switchRosterTeam() {
-	socket.send({ action: "switchTeam" });
+	sendSocket({ action: "switchTeam" });
 }

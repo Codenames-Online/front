@@ -78,7 +78,10 @@ body[user-team="red"] {
 	padding: 10px;
 
 	.team, .guesses, .clue-word { font-weight: bold; font-size: 1.2em; }
-
+	input#clue-word { width: 100px; }
+	input#clue-num { width: 35px; }
+	.btn#clue-submit { margin-left: 10px; }
+	.center { text-align: center; }
 	&[data-team="blue"] {
 		border-bottom: solid 5px $blue;
 

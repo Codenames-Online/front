@@ -63,7 +63,7 @@ function changeTurn(team) {
 
 function sendMessage() {
 	var message = $('.send-msg input').val();
-	socket.send({ action: "sendMessage", message: message });
+	sendSocket({ action: "sendMessage", message: message });
 }
 
 function addMessage(message, name, team) {
@@ -80,4 +80,25 @@ function addMessage(message, name, team) {
 function setHeader(team, clue) {
 	$('.clue').attr('data-team') = getTeamString(team);
 	$('.clue').html(getHeader(team, clue));
+}
+
+// Shows the dialog for the spymaster to enter a clue
+function showClueInput() {
+	$('.clue').html('<div class="center">' +
+		'Give a one word clue: <input type="text" id="clue-word"> ' +
+		'# of cards: <input type="number" id="clue-num"> <div class="btn green" id="clue-submit">Submit</div>' +
+	'</div>');
+
+	$('#clue-submit').click(sendClue);
+}
+
+// Reads in the spymaster fields and sends a clue action
+function sendClue() {
+	var data = {
+		clue: { word: $('#clue-word').val(), num: $('#clue-num').val() },
+		action: 'sendClue'
+	}
+
+	console.log(data);
+	sendSocket(data);
 }

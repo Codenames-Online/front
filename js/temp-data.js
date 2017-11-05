@@ -9,7 +9,8 @@ var sampleTeams = {
 
 var sampleMe = {
 	name: "John",
-	team: 0 // blue
+	team: 0, // blue
+	id: 103
 }
 
 var sampleBoard = {
