@@ -312,26 +312,33 @@ body[user-role="operatives"] {
 
 /* Registration specific styling */
 .registration-page-cont {
-	margin: 25% auto;
-	width: 50%;
-	max-width: 500px;
-	text-align: center;
-
+	.registration-inner {
+		display: grid;
+		grid-template-columns: 1fr 500px 1fr;
+		grid-template-rows: 1fr 35px 50px 50px 2fr;
+		height: 100%;
+	}
+	.text, input, .btn {
+		grid-column-start: 2;
+	}
 	.text {
 		font-size: 22px;
 		margin-bottom: 5px;
 		text-align: left;
+		grid-row-start: 2;
 	}
 	input {
 		width: 100%;
 		height: 50px;
 		font-size: 24px;
 		padding: 10px;
+		grid-row-start: 3;
 	}
 	.btn {
 		margin-top: 10px;
 		font-size: 24px;
 		width: 40%;
+		grid-row-start: 4;
 	}
 }
 
