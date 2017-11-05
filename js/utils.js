@@ -6,4 +6,10 @@ $.fn.enterPress = function (callback) {
 	});
 };
 
-function setMe(newMe) { me = newMe; }
+// Setter function for when the current user is provided
+function setMe(newMe) {
+	me = newMe;
+
+	// Set the team as an HTML attribute for CSS
+	$('body').attr('user-team', me.team);
+}
