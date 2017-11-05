@@ -56,8 +56,9 @@ function changeTurn(team) {
 }
 
 function sendMessage() {
-	var message = $('.send-msg input').val();
-	sendSocket({ action: "sendMessage", message: message });
+	var message = $('.send-msg input[type="text"]').val();
+	sendSocket({ action: 'sendMessage', text: message });
+	$('.send-msg input[type="text"]').val('');
 }
 
 function addMessage(message, name, team) {

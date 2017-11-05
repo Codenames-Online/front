@@ -23,8 +23,8 @@ function handleMessage(message) {
 		case "updateLoiterer":
 			setMe(message.person);
 			break;
-		case "addMessage":
-			addMessage(message.message, message.name, message.team);
+		case "sendMessage":
+			addMessage(message.text, message.playerName, message.playerTeam);
 			break;
 		case "switchTurn":
 			changeTurn(message.team);
