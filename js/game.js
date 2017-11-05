@@ -3,3 +3,28 @@ function goToGame() {
 		$('.game-page-cont').fadeIn();
 	});	
 }
+
+// Takes in {cards: Card[], colors: number[], startTeam: team}
+// Each card is {word: string, votes: string[], revealed: boolean}
+// Colors are of form `{0: blue, 1: red, 2: bystander, 3: assassin}`
+function drawBoard(board) {
+	// Clear board
+	$('.board .card').remove();
+
+	// Add each card using the word 
+	var currCard;
+	for(var i = 0; i < board.cards.length; i++) {
+		currCard = board.cards[i];
+
+		$('.board').append('<div class="card selectable">' +
+			'<span>' + currCard.word + '</span>' +
+			'<div class="overlay">' +
+				'<div class="icon-cont"></div>' +
+			'</div>' +
+		'</div>');
+	}
+	
+	// Add selection by class .selected and appending div.team-select or div.self-select into .overlay .icon-cont 
+	// Add data-agent for colors and data-revealed to revealed cards
+
+}
