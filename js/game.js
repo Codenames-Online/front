@@ -114,8 +114,13 @@ function sendClue() {
 }
 
 // Occurs if spymaster tries to submit invalid clue
-function invalidClueWord() {
-	showOverlay('not-in-dict');
+function invalidClueWord(reason) {
+  if(reason == "wordOnBoard") {
+    showOverlay('word-on-board');
+  }
+  else if(reason == "notWord") {
+    showOverlay('not-in-dict');
+  }
 }
 
 function invalidClueNum() {
