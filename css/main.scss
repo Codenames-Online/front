@@ -281,7 +281,7 @@ body[user-team="red"] {
 }
 
 .btn {
-	background-color: lightgrey;
+	background-color: orange;
 	display: inline-block;
 	min-width: 100px;
 	padding: 5px 20px;
@@ -293,6 +293,10 @@ body[user-team="red"] {
 
 	&.green { background-color: green; }
 	&.red { background-color: red; }
+	&.disabled {
+		cursor: default;
+		background-color: lightgrey;
+	}
 }
 
 /* Registration specific styling */

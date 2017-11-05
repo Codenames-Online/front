@@ -25,14 +25,19 @@ function switchRosterTeam() {
 }
 
 function goToGame() {
-	$('.roster-page-cont').fadeOut(function() {
-		$('.game-page-cont').fadeIn();
-	});
+	if(!$('#start-game').hasClass('disabled')) { // if button is not disabled
+		$('.roster-page-cont').fadeOut(function() {
+			$('.game-page-cont').fadeIn();
+		});
 
-	sendSocket({action: 'startGame' });
+		sendSocket({action: 'startGame' });
+	}
 }
 
 // Gets a boolean from the backend saying if we have enough people to start
 function setGameReady(ready) {
-	$('#start-game').attr('disabled', ready);
+	if(ready)
+		$('#start-game').removeClass('disabled');
+	else
+		$('#start-game').addClass('disabled');
 }

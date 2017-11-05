@@ -38,6 +38,8 @@ function getHeader(team, clue) {
 
 // Sends a socket message with some given data (should include an action)
 function sendSocket(data) {
-	data['id'] = me.id; // add the user's ID
+	if(me) // if user object exists (if signed)
+		data['id'] = me.id; // add the user's ID
+
 	socket.send(JSON.stringify(data));
 }

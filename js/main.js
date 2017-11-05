@@ -4,11 +4,9 @@ $(document).ready(function() {
 	setupSocket();
 	$('.registration-page-cont .btn').click(goToRoster);
 	$('.registration-page-cont input[type="text"]').enterPress(goToRoster);
+	$('.registration-page-cont input[type="text"]').keyup(checkEnteredName);
 	$('#switch-teams').click(switchRosterTeam);
 	$('#start-game').click(goToGame);
 	$('.send-msg input[type="submit"]').click(sendMessage);
 	$('.game-page-cont input[type="text"]').enterPress(sendMessage);
-
-	//TODO: Remove this after we have proper stuff going on
-	setMe(sampleMe)
 });
