@@ -169,3 +169,10 @@ function setupTeamRoster(roster) {
 function endTurn() {
 	sendSocket({action: 'endTurn'});
 }
+
+function gameOver(team) {
+	if(team == BLUE)
+		showOverlay('end-game-blue');
+	else if(team == RED)
+		showOverlay('end-game-red');
+}

@@ -61,6 +61,9 @@ function handleMessage(message) {
 			setHeader(message.startTeam);
 			setupTeamRoster(message.roster);
 			break;
+		case "endGame":
+			gameOver(message.team);
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
