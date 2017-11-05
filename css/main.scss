@@ -62,7 +62,7 @@ body[user-team="red"] {
 	grid-template-rows: 55px 1fr;
 
 	.score-board { grid-column-start: 1; }
-	.hint { grid-column-start: 2; }
+	.clue { grid-column-start: 2; }
 	.board { grid-column-start: 2; }
 	.chat {
 		grid-column-start: 3;
@@ -72,12 +72,12 @@ body[user-team="red"] {
 }
 
 
-.hint {
+.clue {
 	background: lightgrey;
 	margin: 1vh 1vh 0vh 1vh;
 	padding: 10px;
 
-	.team, .guesses, .clue { font-weight: bold; font-size: 1.2em; }
+	.team, .guesses, .clue-word { font-weight: bold; font-size: 1.2em; }
 
 	&[data-team="blue"] {
 		border-bottom: solid 5px $blue;

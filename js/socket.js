@@ -27,6 +27,15 @@ function handleMessage(message) {
 		case "addMessage":
 			addMessage(message.message, message.name, message.team);
 			break;
+		case "switchTurn":
+			changeTurn(message.team);
+			break;
+		case "broadcastClue":
+			setHeader(message.team, message.clue);
+			break;
+		case "promptForClue":
+			showClueInput();
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
