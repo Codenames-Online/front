@@ -49,7 +49,7 @@ function drawBoard(board) {
 			$card.attr('data-revealed', 'true')
 	}
 
-	$('.board .card').click(selectCard);
+	$('.board .card').click(toggleCard);
 }
 
 function setScore(score) {
@@ -146,8 +146,8 @@ function allowGuess(bool) {
 		$('.guess-panel #submit-guess').addClass('disabled')
 }
 
-function selectCard() {
-	sendSocket({ action: "selectCard", cardIndex: $(this).attr('data-index') });
+function toggleCard() {
+	sendSocket({ action: "toggleCard", cardIndex: $(this).attr('data-index') });
 }
 
 
@@ -172,4 +172,11 @@ function setupTeamRoster(roster) {
 
 function endTurn() {
 	sendSocket({action: 'endTurn'});
+}
+
+function gameOver(team) {
+	if(team == BLUE)
+		showOverlay('end-game-blue');
+	else if(team == RED)
+		showOverlay('end-game-red');
 }

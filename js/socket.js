@@ -1,10 +1,10 @@
 function setupSocket() {
 	// Create WebSocket connection - TODO: unhard code this
-	socket = new WebSocket(`ws://${window.location.hostname}:3000`);
+	socket = new WebSocket('ws://35.202.27.167/ws');
+
 
 	// Connection opened
 	socket.addEventListener('open', function (event) {});
-
 	// Listen for messages
 	socket.addEventListener('message', function (event) {
 		console.log('Message from server ', event.data);
@@ -63,6 +63,9 @@ function handleMessage(message) {
 		case "gameStarted":
 			setHeader(message.startTeam);
 			setupTeamRoster(message.roster);
+			break;
+		case "endGame":
+			gameOver(message.team);
 			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
