@@ -97,7 +97,7 @@ function setHeader(team, clue) {
 function showClueInput() {
 	$('.clue').html('<div class="center">' +
 		'Give a one word clue: <input type="text" id="clue-word"> ' +
-		'# of cards: <input type="number" id="clue-num"> <div class="btn green" id="clue-submit">Submit</div>' +
+		'# of cards: <input type="number" min=0 max=9 id="clue-num"> <div class="btn green" id="clue-submit">Submit</div>' +
 	'</div>');
 
 	$('#clue-submit').click(sendClue);
@@ -114,8 +114,12 @@ function sendClue() {
 }
 
 // Occurs if spymaster tries to submit invalid clue
-function invalidClue() {
+function invalidClueWord() {
 	showOverlay('not-in-dict');
+}
+
+function invalidClueNum() {
+	showOverlay('invalid-num-guesses');
 }
 
 // Shows the panel for submitting a guess

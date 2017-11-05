@@ -88,6 +88,15 @@ function verifyClue() {
 }
 
 function showOverlay(id) {
+  var innerText = "";
+  if(id === "not-in-dict") {
+    innerText = "That word isn’t in our dictionary. Please try again!"
+  }
+  else {
+    innerText = "That is not a valid guess input. Please try again!"
+  }
+
+	$(".window-overlay, #" + id).text(innerText);
 	$(".window-overlay, #" + id).fadeIn();
 }
 

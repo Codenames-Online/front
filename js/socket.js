@@ -48,8 +48,11 @@ function handleMessage(message) {
 			goToGame();
 			setMe(message.player);
 			break;
-		case "invalidClue":
-			invalidClue();
+		case "invalidClueWord":
+			invalidClueWord();
+			break;
+		case "invalidClueNum":
+			invalidClueNum();
 			break;
 		case "allowGuess":
 			allowGuess(message.bool);
