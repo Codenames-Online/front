@@ -313,11 +313,18 @@ body[user-role="operatives"] {
 	color: white;
 	cursor: pointer;
 
-	&.green { background-color: green; }
-	&.red { background-color: red; }
+	&.green {
+		background-color: green;
+		&:hover { background-color: darken(green, 5%); }
+	}
+	&.red {
+		background-color: red;
+		&:hover { background-color: darken(red, 5%); }
+	}
 	&.disabled {
 		cursor: default;
 		background-color: lightgrey;
+		&:hover { background-color: lightgrey; }
 	}
 }
 
