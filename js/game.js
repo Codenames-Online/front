@@ -75,6 +75,9 @@ function addMessage(message, name, team) {
 			<div class="author">${name}</div>
 		</div>`
 	);
+
+	// Scroll to bottom
+	$(".msg-cont").scrollTop($(".msg-cont")[0].scrollHeight);
 }
 
 function setHeader(team, clue) {
