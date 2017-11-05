@@ -35,3 +35,9 @@ function getHeader(team, clue) {
 
 	return teamInfo + headerMessage;
 }
+
+// Sends a socket message with some given data (should include an action)
+function sendSocket(data) {
+	data['id'] = me.id; // add the user's ID
+	socket.send(JSON.stringify(data));
+}

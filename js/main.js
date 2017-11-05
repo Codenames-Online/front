@@ -8,4 +8,7 @@ $(document).ready(function() {
 	$('#start-game').click(goToGame);
 	$('.send-msg input[type="submit"]').click(sendMessage);
 	$('.game-page-cont input[type="text"]').enterPress(sendMessage);
+
+	//TODO: Remove this after we have proper stuff going on
+	setMe(sampleMe)
 });
