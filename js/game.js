@@ -106,3 +106,13 @@ function sendClue() {
 function invalidClue() {
 	showOverlay('not-in-dict');
 }
+
+// Shows the panel for submitting a guess
+function showGuessPanel(team, clue) {
+	setHeader(team, clue);
+	
+	if(me.team == team && me.role == OP)
+		$('.guess-panel').show();
+	else
+		$('.guess-panel').hide();
+}

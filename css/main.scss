@@ -67,7 +67,7 @@ body[user-role="operatives"] {
 .game-interface {
 	display: grid;
 	grid-template-columns: 1fr 62vw 1fr;
-	grid-template-rows: 55px 1fr;
+	grid-template-rows: 55px 1fr 120px;
 
 	.score-board { grid-column-start: 1; }
 	.clue { grid-column-start: 2; }
@@ -76,6 +76,10 @@ body[user-role="operatives"] {
 		grid-column-start: 3;
 		grid-row-start: 1;
 		grid-row-end: 2;
+	}
+	.guess-panel {
+		grid-row-start: 3;
+		grid-column-start: 2;
 	}
 }
 
@@ -399,6 +403,7 @@ body[user-role="operatives"] {
 		height: 25px;
 		font-size: 20px;
 		width: 60%;
+		max-width: 300px;
 		margin: auto;
 	}
 }

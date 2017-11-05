@@ -30,7 +30,7 @@ function handleMessage(message) {
 			changeTurn(message.team);
 			break;
 		case "postClue":
-			setHeader(message.team, message.clue);
+			showGuessPanel(message.team, message.clue);
 			break;
 		case "promptForClue":
 			showClueInput();
