@@ -6,17 +6,32 @@ $.fn.enterPress = function (callback) {
 	});
 };
 
-<<<<<<< HEAD
 // Setter function for when the current user is provided
 function setMe(newMe) {
 	me = newMe;
 
 	// Set the team as an HTML attribute for CSS
 	$('body').attr('user-team', me.team);
-=======
-function setMe(newMe) { me = newMe; }
+}
 
 function isMyTurn(turn, color) {
 	return me.team === color && me.role === turn;
->>>>>>> cf2fe44cb5d61ac8ca62d99b465f33619207c175
+}
+
+function capitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function getTeamString(team, upper) {
+	let teamString = team === 0 ? "blue" : "red";
+	return upper ? capitalizeFirstLetter(teamString) : teamString;
+}
+
+function getHeader(team, clue) {
+	let teamInfo = `<span class="team">${getTeamString(team, true)} Team</span>`;
+	let headerMessage = clue
+		? ` guessing on: <span class="clue-word">${clue.word}</span>. Remaining guesses: <span class="guesses">${clue.guesses}</span>`
+		: ` spymaster is working on a clue`;
+
+	return teamInfo + headerMessage;
 }

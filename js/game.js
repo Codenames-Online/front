@@ -28,6 +28,10 @@ function drawBoard(board) {
 	// Add data-agent for colors and data-revealed to revealed cards
 }
 
+function changeTurn(team) {
+	setHeader(team);
+}
+
 function sendMessage() {
 	var message = $('.send-msg input').val();
 	socket.send({ action: "sendMessage", message: message });
@@ -42,4 +46,9 @@ function addMessage(message, name, team) {
 			<div class="author">${name}</div>
 		</div>`
 	);
+}
+
+function setHeader(team, clue) {
+	$('.clue').attr('data-team') = getTeamString(team);
+	$('.clue').html(getHeader(team, clue));
 }
