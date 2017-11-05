@@ -11,12 +11,11 @@ function setupSocket() {
 	socket.addEventListener('message', function (event) {
 		console.log('Message from server ', event.data);
 		
-		handleMessage(event.data);
+		handleMessage(JSON.parse(event.data));
 	});
 }
 
 function handleMessage(message) {
-	// TODO: Maybe parse?
 	switch(message.action) {
 		case "updateTeams":
 			updateRoster(message.teams);
