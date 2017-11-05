@@ -324,8 +324,27 @@ body[user-role="operatives"] {
 		padding: 5px;
 		margin: 200px auto 0px auto;
 		width: 50%;
+		max-width: 500px;
 		padding: 20px 40px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 
+		&.end-game {
+			padding: 40px;
+			border: solid 3px;
+
+			h1 { margin-top: 0px; }
+			&#end-game-blue {
+				 border-color: $blue;
+
+				h1 { color: $blue; }
+			}
+			&#end-game-red {
+				border-color: $red;
+
+				h1 { color: $red; }
+			}
+		}
 		&#verify-clue {
 			.btn {
 				margin-top: 10px;
