@@ -58,7 +58,13 @@ function setScore(score) {
 }
 
 function changeTurn(team) {
-	setHeader(team);
+	if(me.role == OP) // set the header to indicate the spymaster is working if not spymaster
+		setHeader(team);
+	else // just set color, since it swapped
+		$('.clue').attr('data-team', getTeamString(team));
+
+
+	$('.guess-panel').hide(); // hide guess panel
 	$('.board').attr('data-team', getTeamString(team));
 }
 

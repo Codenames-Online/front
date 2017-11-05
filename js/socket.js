@@ -52,6 +52,9 @@ function handleMessage(message) {
 		case "allowGuess":
 			allowGuess(message.bool);
 			break;
+		case "switchActiveTeam":
+			changeTurn(message.team);
+			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
