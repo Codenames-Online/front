@@ -9,7 +9,8 @@ $(document).ready(function() {
 	$('#start-game').click(startGameClick);
 	$('.send-msg input[type="submit"]').click(sendMessage);
 	$('.game-page-cont input[type="text"]').enterPress(sendMessage);
-	$('.guess-panel .btn').click(submitGuess);
+	$('.guess-panel #submit-guess').click(submitGuess);
+	$('.guess-panel #end-turn').click(endTurn);
 
 	$('.close-overlay').click(closeOverlay);
 });

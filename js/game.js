@@ -58,7 +58,7 @@ function setScore(score) {
 }
 
 function changeTurn(team) {
-	if(me.role == OP) // set the header to indicate the spymaster is working if not spymaster
+	if(me.role == OP || me.team != team) // set the header to indicate the spymaster is working if not spymaster
 		setHeader(team);
 	else // just set color, since it swapped
 		$('.clue').attr('data-team', getTeamString(team));
@@ -122,7 +122,7 @@ function invalidClue() {
 function showGuessPanel(team, clue) {
 	setHeader(team, clue);
 
-	$('.guess-panel .btn').addClass('disabled'); // start with the button disabled, since no one has voted
+	$('#submit-guess').addClass('disabled'); // start with the button disabled, since no one has voted
 
 	if(me.team == team && me.role == OP)
 		$('.guess-panel').show();
@@ -131,15 +131,15 @@ function showGuessPanel(team, clue) {
 }
 
 function submitGuess() {
-	if($('.guess-panel .btn.disabled').length == 0) // submit if button is not disabled
+	if($('#submit-guess.disabled').length == 0) // submit if button is not disabled
 		sendSocket({action: "submitGuess"});
 }
 
 function allowGuess(bool) {
 	if(bool)
-		$('.guess-panel .btn').removeClass('disabled')
+		$('.guess-panel #submit-guess').removeClass('disabled')
 	else
-		$('.guess-panel .btn').addClass('disabled')
+		$('.guess-panel #submit-guess').addClass('disabled')
 }
 
 function selectCard() {
@@ -164,4 +164,8 @@ function setupTeamRoster(roster) {
 		else
 			$roster.append('<div class="player">' + currPlayer.name + '</div>');
 	}
+}
+
+function endTurn() {
+	sendSocket({action: 'endTurn'});
 }
