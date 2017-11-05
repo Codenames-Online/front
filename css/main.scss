@@ -88,8 +88,43 @@ body[user-role="operatives"] {
 		grid-row-start: 3;
 		grid-column-start: 2;
 	}
+	.side-roster {
+		grid-column-start: 1;
+		grid-row-start: 2;
+	}
 }
 
+
+.side-roster {
+	height: 40%;
+	margin-top: 70%;
+
+	.roster.blue { background-color: $blue; }
+	.roster.red { background-color: $red; }
+	.roster {
+		padding: 10px;
+		margin: 10px;
+		color: white;
+
+		.title {
+			font-size: 18px;
+			text-align: center;
+			margin: 5px 0px;
+		}
+		.player { padding: 3px 0px; }
+		.eye {
+			background-image: url(../imgs/eye.svg);
+			background-size: 100%;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+			position: relative;
+			top: 4px;
+		}
+		.player:not(.spymaster) { margin-left: 30px; }
+	}
+}
 
 .clue {
 	background: lightgrey;
@@ -186,8 +221,6 @@ body[user-role="operatives"] {
 }
 
 .score-board {
-	margin-top: 50%;
-
 	.title { text-align: center; }
 	.score-cont {
 		display: grid;

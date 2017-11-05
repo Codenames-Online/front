@@ -59,6 +59,7 @@ function handleMessage(message) {
 			break;
 		case "gameStarted":
 			setHeader(message.startTeam);
+			setupTeamRoster(message.roster);
 			break;
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);

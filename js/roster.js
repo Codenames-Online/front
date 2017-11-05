@@ -4,7 +4,7 @@ function updateRoster(teams) {
 	var redRoster = teams.red.sort();
 
 	// Clear old rosters by clearing all player objects in rosters
-	$('.players .player').remove()
+	$('.roster-page-cont .players .player').remove()
 
 	for(var i = 0; i < blueRoster.length; i++) {
 		appendToRoster('blue', blueRoster[i]);
@@ -15,7 +15,7 @@ function updateRoster(teams) {
 	}
 
 	function appendToRoster(team, name) {
-		$('.roster.' + team + ' .players').append(
+		$('.roster-page-cont .roster.' + team + ' .players').append(
 			`<div class="player ${(me && name === me.name) ? "self" : "" }">` + name + '</div>');
 		
 		if(me && name == me.name) {

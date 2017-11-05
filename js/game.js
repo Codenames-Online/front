@@ -145,3 +145,23 @@ function allowGuess(bool) {
 function selectCard() {
 	sendSocket({ action: "selectCard", cardIndex: $(this).attr('data-index') });
 }
+
+
+// Takes in an array of {name: name, role: role, team: team} objects
+function setupTeamRoster(roster) {
+	var currPlayer, $roster;
+
+	for(var i = 0; i < roster.length; i++) {
+		currPlayer = roster[i];
+
+		if(currPlayer.team === BLUE)
+			$roster = $('.side-roster .roster.blue .players');
+		else if(currPlayer.team === RED)
+			$roster = $('.side-roster .roster.red .players');
+
+		if(currPlayer.role == SPY) // spymaster
+			$roster.prepend('<div class="player spymaster"><div class="eye" title="Spymaster"></div>' + currPlayer.name + '</div>');
+		else
+			$roster.append('<div class="player">' + currPlayer.name + '</div>');
+	}
+}

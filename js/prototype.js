@@ -18,15 +18,15 @@ function goToRoster() {
 }
 
 function switchRosterTeam() {
-	var player = $('.player.self').clone();
+	var player = $('.roster-page-cont .player.self').clone();
 
-	if($('.roster.blue .player.self').length > 0) { // if on blue team
-		$('.player.self').remove();
-		$('.roster.red .players').prepend(player);
+	if($('.roster-page-cont .roster.blue .player.self').length > 0) { // if on blue team
+		$('.roster-page-cont .player.self').remove();
+		$('.roster-page-cont .roster.red .players').prepend(player);
 	}
 	else {
-		$('.player.self').remove();
-		$('.roster.blue .players').prepend(player);
+		$('.roster-page-cont .player.self').remove();
+		$('.roster-page-cont .roster.blue .players').prepend(player);
 	}
 }
 
