@@ -29,7 +29,7 @@ function handleMessage(message) {
 		case "switchTurn":
 			changeTurn(message.team);
 			break;
-		case "broadcastClue":
+		case "postClue":
 			setHeader(message.team, message.clue);
 			break;
 		case "promptForClue":

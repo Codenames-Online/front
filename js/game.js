@@ -78,7 +78,7 @@ function addMessage(message, name, team) {
 }
 
 function setHeader(team, clue) {
-	$('.clue').attr('data-team') = getTeamString(team);
+	$('.clue').attr('data-team', getTeamString(team));
 	$('.clue').html(getHeader(team, clue));
 }
 
