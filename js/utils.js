@@ -25,8 +25,8 @@ function setMe(newMe) {
 		$('header .role').text('Spymaster');
 	}
 	else if(me.role == OP) {
-		$('body').attr('user-role', 'operatives');
-		$('header .role').text('Operatives');
+		$('body').attr('user-role', 'operative');
+		$('header .role').text('Operative');
 	}
 }
 

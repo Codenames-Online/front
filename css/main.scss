@@ -65,7 +65,7 @@ body[user-team="red"] {
 body[user-role="spymaster"] {
 	.send-msg input { display: none; }
 }
-body[user-role="operatives"] {
+body[user-role="operative"] {
 	.send-msg .cant-send-msg { display: none; }
 }
 
