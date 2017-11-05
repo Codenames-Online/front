@@ -6,12 +6,12 @@ function drawBoard(board) {
 	$('.board .card').remove();
 
 	var currCard, currColor, $card, $iconCont;
-	
+
 	for(var i = 0; i < board.cards.length; i++) {
 		currCard = board.cards[i];
 		currColor = board.colors[i];
 
-		// Add each card using the word 
+		// Add each card using the word
 		$('.board').append('<div class="card selectable">' +
 			'<span>' + currCard.word + '</span>' +
 			'<div class="overlay">' +
@@ -34,7 +34,7 @@ function drawBoard(board) {
 					$iconCont.prepend('<div class="team-select"></div>')
 			}
 		}
-	
+
 		// Add data-agent for colors and data-revealed to revealed cards
 		if(currColor == BLUE)
 			$card.attr('data-agent', 'blue');
@@ -48,7 +48,12 @@ function drawBoard(board) {
 		if(currCard.revealed)
 			$card.attr('data-revealed', 'true')
 	}
-	
+
+}
+
+function setScore(score) {
+	$('.score.red').html(score[1]);
+	$('.score.blue').html(score[0]);
 }
 
 function changeTurn(team) {

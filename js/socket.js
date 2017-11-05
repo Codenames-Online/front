@@ -10,7 +10,7 @@ function setupSocket() {
 	// Listen for messages
 	socket.addEventListener('message', function (event) {
 		console.log('Message from server ', event.data);
-		
+
 		handleMessage(JSON.parse(event.data));
 	});
 }
@@ -38,6 +38,8 @@ function handleMessage(message) {
 		case "toggleStartButton":
 			setGameReady(message.enable);
 			break;
+		case "updateScore":
+			setScore(message.score);
 		default:
 			console.log(`Whoops, don't know action: ${message.action}`);
 	}
