@@ -350,7 +350,8 @@ body[user-role="operatives"] {
 
 .roster-cont {
 	display: grid;
-	grid-template-rows: 1fr 100px 100px;
+	height: 100%;
+	grid-template-rows: 10px 50% 50px 60px 50px;
 	grid-template-columns: 1fr 20% 10% 20% 1fr;
 
 	.roster {
@@ -358,6 +359,7 @@ body[user-role="operatives"] {
 		margin: 40px 0px;
 		color: white;
 		min-height: 250px;
+		border-radius: 10px;
 
 		&.blue {
 			background-color: $blue;
@@ -383,22 +385,26 @@ body[user-role="operatives"] {
 	}
 	.roster.blue {
 		grid-column-start: 2;
-		grid-row-start: 1;
+		grid-row-start: 2;
 	}
 	.roster.red {
 		grid-column-start: 4;
-		grid-row-start: 1;
+		grid-row-start: 2;
 	}
-	.btn {
+	.player-count-msg, .btn {
 		grid-column-start: 2;
 		grid-column-end: 5;
+	}
+	#switch-teams { grid-row-start: 3; }
+	#start-game { grid-row-start: 4; }
+	.player-count-msg {
+		grid-row-start: 5;
+		text-align: center;
+	}
+	.btn {
 		height: 25px;
-		align-self: center;
 		font-size: 20px;
 		width: 60%;
 		margin: auto;
-
-		&:first-child { grid-row-start: 2; }
-		&:last-child { grid-row-start: 3; }
 	}
 }
