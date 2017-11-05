@@ -11,7 +11,13 @@ function setMe(newMe) {
 	me = newMe;
 
 	// Set the team as an HTML attribute for CSS
-	$('body').attr('user-team', me.team);
+	if(me.team === BLUE)
+		$('body').attr('user-team', 'blue');
+	else if(me.team === RED)
+		$('body').attr('user-team', 'red');
+
+	// Update name in header
+	$('header .name').text(me.name);
 }
 
 function isMyTurn(turn, color) {

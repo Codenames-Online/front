@@ -17,6 +17,15 @@ function updateRoster(teams) {
 	function appendToRoster(team, name) {
 		$('.roster.' + team + ' .players').append(
 			`<div class="player ${(me && name === me.name) ? "self" : "" }">` + name + '</div>');
+		
+		if(me && name == me.name) {
+			if(team == "blue")
+				me.team = BLUE;
+			if(team == "red")
+				me.team = RED;
+
+			setMe(me);
+		}
 	}
 }
 
