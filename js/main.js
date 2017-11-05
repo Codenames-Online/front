@@ -3,6 +3,7 @@ var me, socket;
 $(document).ready(function() {
 	setupSocket();
 	$('.registration-page-cont .btn').click(goToRoster);
+	$('.registration-page-cont input').enterPress(goToRoster);
 });
 
 function setupSocket() {
@@ -72,3 +73,11 @@ function setMe(newMe) { me = newMe; }
 function switchRosterTeam() {
 	socket.send({ action: "switchTeam" });
 }
+
+// jQuery function for conveniently handling pressing enter on a field
+$.fn.enterPress = function (callback) {
+	this.keypress(function (event) {
+		if (event.which == 13) // Enter keycode
+			callback();
+	});
+};
