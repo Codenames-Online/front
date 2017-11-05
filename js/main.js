@@ -24,18 +24,25 @@ function setupSocket() {
 
 function handleMessage(message) {
 	// TODO: Maybe parse?
-
 	switch(message.action) {
 		case "updateTeams":
 			updateRoster(message.teams);
 			break;
-	
+		case "updateLoiterer":
+			setMe(message.person);
+			break;
+		default:
+			console.log(`Whoops, don't know action: ${message.action}`);
 	}
 }
 
 function goToRoster() {
 	var name = $('.registration-page-cont input').val();
-	socket.send({ action: "setName", name: val });
+	socket.send({ action: "setName", name: name });
+
+	$('.registration-page-cont').fadeOut(function() {
+		$('.roster-page-cont').fadeIn();
+	});
 }
 
 // @param teams - {blue: [String], red: [String]} contains two arrays of String names
@@ -55,9 +62,13 @@ function updateRoster(teams) {
 	}
 
 	function appendToRoster(team, name) {
-		if(me && name == me.name)
-			$('.roster.' + team + ' .players').append('<div class="player self">' + name + '</div>');
-		else
-			$('.roster.' + team + ' .players').append('<div class="player">' + name + '</div>');
+		$('.roster.' + team + ' .players').append(
+			`<div class="player ${(me && name === me.name) ? "self" : "" }">` + name + '</div>');
 	}
+}
+
+function setMe(newMe) { me = newMe; }
+
+function switchRosterTeam() {
+	socket.send({ action: "switchTeam" });
 }
