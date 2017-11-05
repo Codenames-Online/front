@@ -2,8 +2,8 @@ var me, socket;
 
 $(document).ready(function() {
 	setupSocket();
-	$('.registration-page-cont .btn').click(goToRoster);
-	$('.registration-page-cont input[type="text"]').enterPress(goToRoster);
+	$('.registration-page-cont .btn').click(registerName);
+	$('.registration-page-cont input[type="text"]').enterPress(registerName);
 	$('.registration-page-cont input[type="text"]').keyup(checkEnteredName);
 	$('#switch-teams').click(switchRosterTeam);
 	$('#start-game').click(startGameClick);

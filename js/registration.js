@@ -1,11 +1,13 @@
 function goToRoster() {
+	$('.registration-page-cont').hide();
+	$('.roster-page-cont').show();
+}
+
+function registerName() {
 	if(!$('#register').hasClass('disabled')) { // only continue if button is enabled
 		var name = $('.registration-page-cont input').val();
 		sendSocket({ action: "setName", name: name });
-
-		$('.registration-page-cont').hide();
-		$('.roster-page-cont').show();
-	}
+	}	
 }
 
 function checkEnteredName() {
