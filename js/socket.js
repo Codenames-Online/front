@@ -1,6 +1,10 @@
 function setupSocket() {
 	// Create WebSocket connection - TODO: unhard code this
-	socket = new WebSocket(`ws://${window.location.hostname}:3000`);
+
+	if(window.location.host === 'viktorkoves.com')
+		socket = new WebSocket('ws://35.202.27.167/game');
+	else
+		socket = new WebSocket(`ws://${window.location.hostname}:3000`);
 
 	// Connection opened
 	socket.addEventListener('open', function (event) {});
