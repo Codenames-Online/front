@@ -17,10 +17,10 @@ var sampleBoard = {
 			word: "Banana",
 			votes: ["John", "Jane", "Thomas"]
 		},
-		{word: "Mercury", revealed: true},
+		{word: "Mercury", votes: [], revealed: true},
 		{
 			word: "Apple",
-			votes: "Adam"
+			votes: ["Adam"]
 		}
 	],
 	colors: [0,1,2,3,0,0,1,2,1,0,0,1,2,1,0,0,1,2,2,0,0,1,2,2,0]
@@ -29,5 +29,5 @@ var sampleBoard = {
 var cardsToAdd = 25 - sampleBoard.cards.length;
 
 for(var i = 0; i < cardsToAdd; i++) {
-	sampleBoard.cards.push({word: "Codeword"});
+	sampleBoard.cards.push({word: "Codeword", votes: []});
 }
