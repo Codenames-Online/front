@@ -12,7 +12,7 @@ function drawBoard(board) {
 		currCard = board[i][1];
 
 		// Add each card using the word
-		$('.board').append('<div class="card selectable">' +
+		$('.board').append('<div class="card selectable" data-index="' + i + '">' +
 			'<span>' + currCard.word + '</span>' +
 			'<div class="overlay">' +
 				'<div class="icon-cont"></div>' +
@@ -49,6 +49,7 @@ function drawBoard(board) {
 			$card.attr('data-revealed', 'true')
 	}
 
+	$('.board .card').click(selectCard);
 }
 
 function setScore(score) {
@@ -58,6 +59,7 @@ function setScore(score) {
 
 function changeTurn(team) {
 	setHeader(team);
+	$('.board').attr('data-team', getTeamString(team));
 }
 
 function sendMessage() {
@@ -103,6 +105,8 @@ function sendClue() {
 }
 
 // Occurs if spymaster tries to submit invalid clue
-function invalidClue() {
-	showOverlay('not-in-dict');
+function invalidClue() { showOverlay('not-in-dict'); }
+
+function selectCard() {
+	sendSocket({ action: "selectCard", cardIndex: $(this).attr('data-index') });
 }

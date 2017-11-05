@@ -3,9 +3,7 @@ function setupSocket() {
 	socket = new WebSocket(`ws://${window.location.hostname}:3000`);
 
 	// Connection opened
-	socket.addEventListener('open', function (event) {
-			// socket.send({ greeting: 'Hello Server!'});
-	});
+	socket.addEventListener('open', function (event) {});
 
 	// Listen for messages
 	socket.addEventListener('message', function (event) {

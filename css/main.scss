@@ -34,7 +34,13 @@ header {
 /* Team specific styling */
 body[user-team="blue"] {
 	header { background-color: $blue; }
-	
+}
+body[user-team="red"] {
+	header {background-color: $red; }
+}
+
+
+.board[data-team="blue"] {
 	/* Team specific voting styling */
 	.card.selected .overlay {
 		background-color: rgba($blue, 0.25);
@@ -43,9 +49,8 @@ body[user-team="blue"] {
 		.self-select { background-image: url(../imgs/stars-blue.svg); }
 	}
 }
-body[user-team="red"] {
-	header {background-color: $red; }
 
+.board[data-team="red"] {
 	/* Team specific voting styling */
 	.card.selected .overlay {
 		background-color: rgba($red, 0.25);
@@ -54,6 +59,7 @@ body[user-team="red"] {
 		.self-select { background-image: url(../imgs/stars-red.svg); }
 	}
 }
+
 
 /* Role specific styling */
 body[user-role="spymaster"] {
