@@ -4,7 +4,6 @@ function setupSocket() {
 
 	// Connection opened
 	socket.addEventListener('open', function (event) {});
-
 	// Listen for messages
 	socket.addEventListener('message', function (event) {
 		console.log('Message from server ', event.data);
