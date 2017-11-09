@@ -142,6 +142,18 @@ body[user-role="operative"] {
 	margin: 1vh 1vh 0vh 1vh;
 	align-self: center;
 
+	.right {
+		float: right;
+		position: relative;
+		top: -3px;
+	}
+	.guess-counter {
+		padding: 5px 8px;
+		color: white;
+		border-radius: 5px;
+		margin-right: 2px;
+		display: inline-block;
+	}
 	.text { padding: 10px; }
 	.team-sect {
 		height: 5px;
@@ -177,10 +189,12 @@ body[user-role="operative"] {
 	.btn#clue-submit { margin-left: 10px; }
 	.center { text-align: center; }
 	&[data-team="blue"] {
+		.guess-counter { background-color: $blue; }
 		.team-sect { background-color: $blue; }
 		.team { color: $blue; }
 	}
 	&[data-team="red"] {
+		.guess-counter { background-color: $red; }
 		.team-sect { background-color: $red; }
 		.team { color: $red; }
 	}

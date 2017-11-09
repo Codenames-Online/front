@@ -44,7 +44,7 @@ function getTeamString(team, upper) {
 function getHeader(team, clue) {
 	let teamInfo = `<span class="team">${getTeamString(team, true)} Team</span>`;
 	let headerMessage = clue
-		? ` guessing on: <span class="clue-word">${clue.word}</span>. Remaining guesses: <span class="guesses">${clue.num}</span>`
+		? ` guessing on <span class="clue-word">${clue.word}</span> for <span class="guesses">${clue.num} cards</span><div class="right"><span class="guess-counter">${clue.guesses}</span> guesses left</div>`
 		: ` spymaster is working on a clue`;
 
 	return teamInfo + headerMessage;
