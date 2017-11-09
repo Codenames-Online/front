@@ -1,3 +1,9 @@
+/**
+ * Code for the registration page/section, which is the first screen that the
+ * user sees, and is responsible for registering them to a team via the name
+ * they enter into the text input field.
+ */
+
 function goToRoster() {
 	$('.registration-page-cont').hide();
 	$('.roster-page-cont').show();

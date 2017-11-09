@@ -1,3 +1,10 @@
+/**
+ * Code for the game page/section, where the user actually plays the
+ * game. This page handles all of the game UX. Including letting users
+ * submit clues and guesses, redrawing the board when guesses come in
+ * or when cards are revealed, and showing game end conditions.
+ */
+
 // Takes in [[color, Card],[color,Card]]
 // Each card is {word: string, votes: string[], revealed: boolean}
 // Colors are of form `{0: blue, 1: red, 2: bystander, 3: assassin}`

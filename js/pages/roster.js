@@ -1,3 +1,11 @@
+/**
+ * Code for the roster page/section, where user's can view the two teams
+ * and wait for other players to join. This page handles updating the team
+ * rosters when a new roster comes in via the websocket, switches the
+ * user's team when they request it, and handles entering the game when
+ * there are enough people.
+ */
+
 // @param teams - {blue: [String], red: [String]} contains two arrays of String names
 function updateRoster(teams) {
 	var blueRoster = teams.blue.sort();
