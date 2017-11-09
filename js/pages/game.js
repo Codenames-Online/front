@@ -70,8 +70,8 @@ function changeTurn(team) {
 	else // just set color, since it swapped
 		$('.clue').attr('data-team', getTeamString(team));
 
-
 	$('.guess-panel').hide(); // hide guess panel
+	$('.clue .team-sect').removeClass('your-turn'); // remove .your-turn class on .team-sect
 	$('.board').attr('data-team', getTeamString(team));
 }
 
@@ -97,15 +97,18 @@ function addMessage(message, name, team) {
 
 function setHeader(team, clue) {
 	$('.clue').attr('data-team', getTeamString(team));
-	$('.clue').html(getHeader(team, clue));
+	$('.clue .text').html(getHeader(team, clue));
 }
 
 // Shows the dialog for the spymaster to enter a clue
 function showClueInput() {
-	$('.clue').html('<div class="center">' +
+	$('.clue .text').html('<div class="center">' +
 		'Give a one word clue: <input type="text" id="clue-word"> ' +
 		'# of cards: <input type="number" min=0 max=9 id="clue-num"> <div class="btn green" id="clue-submit">Submit</div>' +
 	'</div>');
+
+	$('.clue .team-sect .turn-text').text('Your turn, spymaster');
+	$('.clue .team-sect').addClass('your-turn');
 
 	$('#clue-submit').click(sendClue);
 }
@@ -134,16 +137,21 @@ function invalidClueNum() {
 	showOverlay('invalid-num-guesses');
 }
 
-// Shows the panel for submitting a guess
+// It's this user's turn - shows the panel for submitting a guess
 function showGuessPanel(team, clue) {
 	setHeader(team, clue);
 
 	$('#submit-guess').addClass('disabled'); // start with the button disabled, since no one has voted
 
-	if(me.team == team && me.role == OP)
+	if(me.team == team && me.role == OP) {
+		$('.clue .team-sect .turn-text').text('Your turn, operator');
+		$('.clue .team-sect').addClass('your-turn');
 		$('.guess-panel').show();
-	else
+	}
+	else {
+		$('.clue .team-sect').removeClass('your-turn');
 		$('.guess-panel').hide();
+	}
 }
 
 function submitGuess() {

@@ -15,7 +15,7 @@
 	<script src="js/socket.js"></script>
 	<script src="js/main.js"></script>
 </head>
-<body user-team="blue">
+<body user-team="blue" user-role="operative">
 	<!-- Section 1: Registration -->
 	<div class="registration-page-cont">
 		<div class="registration-inner">
@@ -73,7 +73,13 @@
 						<div class="players"></div>
 					</div>
 				</div>
-				<div class="clue" data-team=""></div>
+				<div class="clue" data-team="">
+					<div class="text"></div>
+					<div class="team-sect">
+						<div class="turn-img"></div>
+						<div class="turn-text"></div>
+					</div>
+				</div>
 				<div class="board">
 					{% for i in (1..25) %}
 						<div class="card selectable">
