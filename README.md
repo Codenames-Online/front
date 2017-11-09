@@ -10,6 +10,11 @@ The backend is powered by a Node.js server, which the Codenames backend source c
 
 To run this repository, install [Jekyll](https://jekyllrb.com/) and run `jekyll serve`.
 
+
+## Credits
+
+Free icons retrieved using [icomoon](https://icomoon.io).
+
 [viktor]: https://github.com/vkoves
 [lily]: https://github.com/lilyszhang
 [armaan]: https://github.com/armaanshah96
