@@ -12,7 +12,14 @@ function goToRoster() {
 function registerName() {
 	if(!$('#register').hasClass('disabled')) { // only continue if button is enabled
 		var name = $('.registration-page-cont input').val();
-		sendSocket({ action: "setName", name: name });
+
+		try {
+			sendSocket({ action: "setName", name: name });
+		}
+		catch(error) {
+			console.error(error);
+			showOverlay('websocket-error');
+		}
 	}	
 }
 
