@@ -144,7 +144,7 @@ function showGuessPanel(team, clue) {
 	$('#submit-guess').addClass('disabled'); // start with the button disabled, since no one has voted
 
 	if(me.team == team && me.role == OP) {
-		$('.clue .team-sect .turn-text').text('Your turn, operator');
+		$('.clue .team-sect .turn-text').text('Your turn, operative');
 		$('.clue .team-sect').addClass('your-turn');
 		$('.guess-panel').show();
 	}
