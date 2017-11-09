@@ -1,7 +1,10 @@
 function setupSocket() {
 	// Create WebSocket connection - TODO: unhard code this
 	// socket = new WebSocket('ws://localhost:3000');
-	socket = new WebSocket('ws://35.202.27.167/ws');
+	if(window.location.host.indexOf('localhost') > -1) //if on localhost
+		socket = new WebSocket('ws://localhost:8000');
+	else
+		socket = new WebSocket('ws://35.202.27.167/ws');
 
 
 	// Connection opened
