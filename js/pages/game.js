@@ -77,6 +77,7 @@ function changeTurn(team) {
 
 function sendMessage() {
 	var message = $('.send-msg input[type="text"]').val();
+	message = escapeHtml(message); // escape message for safety
 	sendSocket({ action: 'sendMessage', text: message });
 	$('.send-msg input[type="text"]').val('');
 }
@@ -86,14 +87,10 @@ function addMessage(message, name, team) {
 	let maybeSelf = name === me.name ? ' data-self="true"' : "";
 	$('.chat .msg-cont').append(
 		`<div class="msg" data-team="${teamString}"${maybeSelf}>
-			<div class="body"></div>
-			<div class="author"></div>
+			<div class="body">${message}</div>
+			<div class="author">${name}</div>
 		</div>`
 	);
-
-	// Apply message and name using text() to prevent <script> injection
-	$('.chat .msg:last-of-type .body').text(message);
-	$('.chat .msg:last-of-type .author').text(name)
 
 	// Scroll to bottom
 	$(".msg-cont").scrollTop($(".msg-cont")[0].scrollHeight);
