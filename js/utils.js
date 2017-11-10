@@ -17,7 +17,7 @@ function setMe(newMe) {
 		$('body').attr('user-team', 'red');
 
 	// Update name in header
-	$('header .name').text(me.name);
+	$('header .name').html(me.name);
 
 	// Update role in header
 	if(me.role == SPY) {
