@@ -4,8 +4,7 @@ function setupSocket() {
 	if(window.location.host.indexOf('localhost') > -1) //if on localhost
 		socket = new WebSocket('ws://localhost:8000');
 	else
-		socket = new WebSocket('ws://35.202.27.167/ws');
-
+		socket = new WebSocket('ws://codenames-backend.herokuapp.com/');
 
 	// Connection opened
 	socket.addEventListener('open', function (event) {});
