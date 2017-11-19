@@ -64,16 +64,27 @@ body[user-team="red"] {
 /* Role specific styling */
 body[user-role="spymaster"] {
 	.send-msg input { display: none; }
+	.clue .team-sect .turn-img {
+		background-image: url(../imgs/eye.svg);
+		width: 30px;
+		background-size: 90%;
+	}
 }
 body[user-role="operative"] {
 	.send-msg .cant-send-msg { display: none; }
+	.clue .team-sect .turn-img {
+		background-image: url(../imgs/operatives.svg);
+		width: 50px;
+		background-position: bottom center;
+		background-size: 100%;
+	}
 }
 
 /* Grid locations for the game interface */
 .game-interface {
 	display: grid;
 	grid-template-columns: 1fr 62vw 1fr;
-	grid-template-rows: 55px 1fr 120px;
+	grid-template-rows: 100px 1fr 120px;
 
 	.score-board { grid-column-start: 1; }
 	.clue { grid-column-start: 2; }
@@ -129,21 +140,62 @@ body[user-role="operative"] {
 .clue {
 	background: lightgrey;
 	margin: 1vh 1vh 0vh 1vh;
-	padding: 10px;
+	align-self: center;
 
+	.right {
+		float: right;
+		position: relative;
+		top: -3px;
+	}
+	.guess-counter {
+		padding: 5px 8px;
+		color: white;
+		border-radius: 5px;
+		margin-right: 2px;
+		display: inline-block;
+	}
+	.text { padding: 10px; }
+	.team-sect {
+		height: 5px;
+		transition: height 0.5s;
+		color: white;
+
+		.turn-text, .turn-img { transition: opacity 0.5s; }
+		.turn-img {
+			display: inline-block;
+			opacity: 0;
+			height: 30px;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-left: 20px;
+		}
+		.turn-text {
+			display: inline-block;
+			opacity: 0;
+			vertical-align: top;
+			padding-top: 7px;
+			padding-left: 10px;
+		}
+		&.your-turn {
+			height: 30px;
+
+			.turn-text { opacity: 1; }
+			.turn-img { opacity: 1; }
+		}
+	}
 	.team, .guesses, .clue-word { font-weight: bold; font-size: 1.2em; }
 	input#clue-word { width: 100px; }
 	input#clue-num { width: 35px; }
 	.btn#clue-submit { margin-left: 10px; }
 	.center { text-align: center; }
 	&[data-team="blue"] {
-		border-bottom: solid 5px $blue;
-
+		.guess-counter { background-color: $blue; }
+		.team-sect { background-color: $blue; }
 		.team { color: $blue; }
 	}
 	&[data-team="red"] {
-		border-bottom: solid 5px $red;
-
+		.guess-counter { background-color: $red; }
+		.team-sect { background-color: $red; }
 		.team { color: $red; }
 	}
 }
