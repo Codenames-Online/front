@@ -17,7 +17,7 @@ function setMe(newMe) {
 		$('body').attr('user-team', 'red');
 
 	// Update name in header
-	$('header .name').text(me.name);
+	$('header .name').html(me.name);
 
 	// Update role in header
 	if(me.role == SPY) {
@@ -56,4 +56,22 @@ function sendSocket(data) {
 		data['id'] = me.id; // add the user's ID
 
 	socket.send(JSON.stringify(data));
+}
+
+// Escapes an unsafe string so it can be put into HTML
+var entityMap = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#39;',
+	'/': '&#x2F;',
+	'`': '&#x60;',
+	'=': '&#x3D;'
+};
+
+function escapeHtml (string) {
+	return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+		return entityMap[s];
+	});
 }

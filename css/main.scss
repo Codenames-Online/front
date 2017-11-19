@@ -183,7 +183,7 @@ body[user-role="operative"] {
 				margin: 0px 2px 2px 0px;
 			}
 		}
-		&.selectable { 
+		&.selectable {
 			cursor: pointer;
 
 			&:hover {
@@ -251,6 +251,7 @@ body[user-role="operative"] {
 		background-color: white;
 		border-radius: 10px;
 		margin-bottom: 10px;
+		word-wrap: break-word;
 
 		.body { padding: 10px; }
 		.author {
@@ -265,8 +266,8 @@ body[user-role="operative"] {
 		}
 		&[data-team="blue"] .author { background-color: $blue; }
 		&[data-team="red"] .author { background-color: $red; }
-		
-		/* if the current user sent the message, hide author and 
+
+		/* if the current user sent the message, hide author and
 		make the whole thing the color of their team */
 		&[data-self="true"] {
 			color: white;
@@ -276,7 +277,7 @@ body[user-role="operative"] {
 			&[data-team="red"] { background-color: $red; }
 		}
 	}
-	.msg-cont { 
+	.msg-cont {
 		background-color: lightgrey;
 		padding: 10px 40px;
 		overflow-y: scroll;
@@ -432,7 +433,7 @@ body[user-role="operative"] {
 		}
 		&.red {
 			background-color: $red;
-			
+
 			.player.self { color: $red; }
 		}
 		.title {

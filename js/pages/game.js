@@ -77,6 +77,7 @@ function changeTurn(team) {
 
 function sendMessage() {
 	var message = $('.send-msg input[type="text"]').val();
+	message = escapeHtml(message); // escape message for safety
 	sendSocket({ action: 'sendMessage', text: message });
 	$('.send-msg input[type="text"]').val('');
 }
