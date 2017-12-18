@@ -4,11 +4,6 @@
  * they enter into the text input field.
  */
 
-function goToRoster() {
-	$('.registration-page-cont').hide();
-	$('.roster-page-cont').show();
-}
-
 function registerName() {
 	if(!$('#register').hasClass('disabled')) { // only continue if button is enabled
 		var name = $('.registration-page-cont input').val();
@@ -24,6 +19,32 @@ function registerName() {
 	}
 }
 
+function goToLobbyRegistration() {
+	$('.registration-page-cont').hide();
+	$('.lobby-registration-page-cont').show();
+}
+
+function registerLobby() {
+	if(!$('#joinLobby').hasClass('disabled')) { // only continue if button is enabled
+		var lobby = $('.lobby-registration-page-cont input').val();
+		lobby = escapeHtml(lobby); // escape name for safety
+
+		goToRoster();
+		try {
+			// sendSocket({ action: "setName", name: name });
+		}
+		catch(error) {
+			console.error(error);
+			showOverlay('websocket-error');
+		}
+	}
+}
+
+function goToRoster() {
+	$('.lobby-registration-page-cont').hide();
+	$('.roster-page-cont').show();
+}
+
 function checkEnteredName() {
 	var name = $('.registration-page-cont input').val();
 
@@ -33,4 +54,12 @@ function checkEnteredName() {
 		$('#register').addClass('disabled');
 }
 
+function checkEnteredLobby() {
+	var lobby = $('.lobby-registration-page-cont input').val();
+
+	if(lobby.length > 0)
+		$('#joinLobby').removeClass('disabled');
+	else
+		$('#joinLobby').addClass('disabled');
+}
 
