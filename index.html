@@ -16,7 +16,8 @@
 	<script src="js/main.js"></script>
 </head>
 <body user-team="blue" user-role="operative">
-	<!-- Section 1: Registration -->
+
+	<!-- Section 1: Player Registration -->
 	<div class="registration-page-cont">
 		<div class="registration-inner">
 			<div class="text">What is your name?</div>
@@ -24,7 +25,18 @@
 			<div class="btn green disabled" id="register">Enter</div>
 		</div>
 	</div>
-	<!-- Section 2: Roster Page -->
+
+	<!-- Section 1: Lobby Picking -->	
+	<div class="lobby-registration-page-cont">
+		<div class="lobby-registration-inner">
+			<div class="text" id="instructions">Create a new lobby or join an existing one</div>
+			<input type="text" placeholder="Enter a lobby name">
+			<div class="btn green disabled" id="joinLobby">Join</div>
+			<div class="btn green" id="createLobby">Create</div>
+		</div>
+	</div>
+	
+	<!-- Section 2: Lobby Page -->
 	<div class="roster-page-cont">
 		<div class="roster-cont">
 			<div class="blue roster">
@@ -48,6 +60,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- Section 3: Game interface -->
 	<div class="game-page-cont">
 		<div class="game-page">
