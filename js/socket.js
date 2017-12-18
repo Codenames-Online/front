@@ -23,7 +23,7 @@ function handleMessage(message) {
 			break;
 		case "updateLoiterer":
 			setMe(message.person);
-			goToRoster();
+			goToLobbyRegistration();
 			break;
 		case "sendMessage":
 			addMessage(message.text, message.playerName, message.playerTeam);
