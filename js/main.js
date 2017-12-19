@@ -1,4 +1,4 @@
-var me, socket;
+var me, gid, socket;
 
 $(document).ready(function() {
 	setupSocket();
@@ -7,8 +7,9 @@ $(document).ready(function() {
 	$('.registration-page-cont input[type="text"]').enterPress(registerName);
 	$('.registration-page-cont input[type="text"]').keyup(checkEnteredName);
 
-	$('.lobby-registration-page-cont .btn').click(registerLobby);
-	$('.lobby-registration-page-cont input[type="text"]').enterPress(registerLobby);
+	$('.lobby-registration-page-cont #createLobby').click(createLobby);
+	$('.lobby-registration-page-cont #joinLobby').click(joinLobby);
+	$('.lobby-registration-page-cont input[type="text"]').enterPress(joinLobby);
 	$('.lobby-registration-page-cont input[type="text"]').keyup(checkEnteredLobby);
 
 	$('#switch-teams').click(switchRosterTeam);

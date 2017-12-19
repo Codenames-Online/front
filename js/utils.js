@@ -30,6 +30,8 @@ function setMe(newMe) {
 	}
 }
 
+function setGroup(groupId) { gid = groupId; }
+
 function isMyTurn(turn, color) { return me.team === color && me.role === turn; }
 
 function capitalizeFirstLetter(str) {
@@ -53,7 +55,9 @@ function getHeader(team, clue) {
 // Sends a socket message with some given data (should include an action)
 function sendSocket(data) {
 	if(me) // if user object exists (if signed)
-		data['id'] = me.id; // add the user's ID
+		data['pid'] = me.id; // add the user's ID
+	if(gid) // if registered to lobby
+		data['gid'] = gid; // add group id
 
 	socket.send(JSON.stringify(data));
 }
