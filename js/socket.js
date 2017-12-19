@@ -21,9 +21,14 @@ function handleMessage(message) {
 		case "updateTeams":
 			updateRoster(message.teams);
 			break;
-		case "updateLoiterer":
+		case "updateLoner":
 			setMe(message.person);
 			goToLobbyRegistration();
+			break;
+		case "updateLoiterer":
+			setMe(message.person);
+			setGroup(message.gid);
+			goToRoster();
 			break;
 		case "sendMessage":
 			addMessage(message.text, message.playerName, message.playerTeam);

@@ -24,14 +24,23 @@ function goToLobbyRegistration() {
 	$('.lobby-registration-page-cont').show();
 }
 
-function registerLobby() {
+function createLobby() {
+	try {
+		sendSocket({ action: "createLobby" });
+	}
+	catch(error) {
+		console.error(error);
+		showOverlay('websocket-error');
+	}
+}
+
+function joinLobby() {
 	if(!$('#joinLobby').hasClass('disabled')) { // only continue if button is enabled
 		var lobby = $('.lobby-registration-page-cont input').val();
 		lobby = escapeHtml(lobby); // escape name for safety
 
-		goToRoster();
 		try {
-			// sendSocket({ action: "setName", name: name });
+			sendSocket({ action: "joinLobby", gid: lobby });
 		}
 		catch(error) {
 			console.error(error);
