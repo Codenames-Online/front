@@ -30,7 +30,10 @@ function setMe(newMe) {
 	}
 }
 
-function setGroup(groupId) { gid = groupId; }
+function setGroup(groupId) {
+	gid = groupId;
+	$('.roster-cont .lobby').html("Lobby: " + gid);
+}
 
 function isMyTurn(turn, color) { return me.team === color && me.role === turn; }
 
