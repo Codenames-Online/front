@@ -25,6 +25,9 @@ function handleMessage(message) {
 			setMe(message.person);
 			goToLobbyRegistration();
 			break;
+		case "invalidLobby":
+			invalidLobby();
+			break;
 		case "updateLoiterer":
 			setMe(message.person);
 			setGroup(message.gid);

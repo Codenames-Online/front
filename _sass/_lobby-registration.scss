@@ -16,18 +16,15 @@
 			grid-column-start: 2;
 
 			h2 { margin-top: 0px; margin-bottom: 8px; }
-			form#join-lobby {
-				/* Error message hidden by default */
-				span.error-msg {
-					display: none;
-					margin-top: 5px;
-					color: red;
-				}
-
-				&.error {
-					span.error-msg { display: block; }
-					input { border: solid 2px red; }
-				}
+			/* Error message hidden by default */
+			span.error-msg {
+				display: none;
+				margin-top: 5px;
+				color: red;
+			}
+			&.error {
+				span.error-msg { display: block; }
+				input { border: solid 2px red; }
 			}
 		}
 		.create-lobby-cont {
