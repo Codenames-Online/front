@@ -1,3 +1,8 @@
+/**
+ * Code for the lobby registartion page Where a user can create a new lobby
+ * or join an existing lobby if they have the access code.
+ */
+
 function goToLobbyRegistration() {
 	$('.registration-page-cont').hide();
 	$('.lobby-registration-page-cont').show();
@@ -26,6 +31,12 @@ function joinLobby() {
 			showOverlay('websocket-error');
 		}
 	}
+}
+
+// Called when the user tries joining a lobby we cannot find
+// This shows the error message
+function invalidLobby() {
+	$('.join-lobby-cont').addClass('error');
 }
 
 function goToRoster() {
