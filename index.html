@@ -26,16 +26,25 @@
 		</div>
 	</div>
 
-	<!-- Section 1: Lobby Picking -->	
+	<!-- Section 1: Lobby Picking -->
 	<div class="lobby-registration-page-cont">
 		<div class="lobby-registration-inner">
-			<div class="text" id="instructions">Create a new lobby or join an existing one</div>
-			<input type="text" placeholder="Enter a lobby name">
-			<div class="btn green disabled" id="joinLobby">Join</div>
-			<div class="btn green" id="createLobby">Create</div>
+			<div class="join-lobby-cont">
+				<h2>Join an Existing Lobby</h2>
+				<form id="join-lobby">
+					<input type="text" placeholder="Enter a lobby access code">
+					<span class="error-msg">We couldn’t find a lobby with that access code!</span>
+					<div class="btn green disabled" id="joinLobby">Join Lobby</div>
+				</form>
+			</div>
+
+			<div class="create-lobby-cont">
+				<h3>Don't have a lobby to join?</h4>
+				<div class="btn green" id="createLobby">Create A Lobby</div>
+			</h3>
 		</div>
 	</div>
-	
+
 	<!-- Section 2: Lobby Page -->
 	<div class="roster-page-cont">
 		<div class="roster-cont">
@@ -61,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Section 3: Game interface -->
 	<div class="game-page-cont">
 		<div class="game-page">

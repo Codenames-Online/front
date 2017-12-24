@@ -1,0 +1,59 @@
+/* Lobby Registration specific styling */
+
+
+.lobby-registration-page-cont {
+	// display: none;
+	height: 100%;
+
+	.lobby-registration-inner {
+		display: grid;
+		height: 100%;
+		grid-template-rows: 1fr 20% 10% 1fr;
+		grid-template-columns: 1fr 500px 1fr;
+
+		.join-lobby-cont {
+			grid-row-start: 2;
+			grid-column-start: 2;
+
+			h2 { margin-top: 0px; margin-bottom: 8px; }
+			form#join-lobby {
+				/* Error message hidden by default */
+				span.error-msg {
+					display: none;
+					margin-top: 5px;
+					color: red;
+				}
+
+				&.error {
+					span.error-msg { display: block; }
+					input { border: solid 2px red; }
+				}
+			}
+		}
+		.create-lobby-cont {
+			grid-row-start: 3;
+			grid-column-start: 2;
+
+			h3 { margin-bottom: 0px; }
+		}
+	}
+	.text {
+		font-size: 22px;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+	input {
+		width: 100%;
+		height: 50px;
+		font-size: 24px;
+		padding: 10px;
+	}
+	.btn {
+		margin-top: 10px;
+		font-size: 24px;
+		width: 40%;
+	}
+	#createLobby {
+		width: 80%;
+	}
+}
