@@ -4,7 +4,7 @@
 ## Description
 A single-page front-end for Codenames built over 36 hours. Won 3rd Place at [Wildhacks 2017][wildhacks].
 
-The backend is powered by a Node.js server, which the Codenames backend source code [here](https://github.com/nathanshelly/codenames-back).
+The backend is powered by a Node.js server, which the Codenames backend source code [here][backend].
 
 ## Running Locally
 
@@ -20,4 +20,4 @@ Free icons retrieved using [icomoon](https://icomoon.io).
 [armaan]: https://github.com/armaanshah96
 [nathan]: https://github.com/nathanshelly
 [wildhacks]: https://devpost.com/software/codenames
-[front]: https://github.com/nathanshelly/codenames
+[backend]: https://github.com/Codenames-Online/back
