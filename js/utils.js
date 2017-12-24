@@ -31,8 +31,7 @@ function setMe(newMe) {
 }
 
 function setGroup(groupId) {
-	gid = groupId;
-	$('.roster-cont .lobby').html("Lobby: " + gid);
+	$('.roster-cont .lobby #access-code').text(groupId);
 }
 
 function isMyTurn(turn, color) { return me.team === color && me.role === turn; }

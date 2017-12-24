@@ -476,8 +476,16 @@ body[user-role="operative"] {
 	.lobby {
 		font-size: 20px;
 		text-align: center;
+		margin-top: 16px;
 		grid-row-start: 2;
-		grid-column-start: 3;
+		grid-column-start: 2;
+		grid-column-end: 5;
+
+		#access-code {
+			background: lightgrey;
+			padding: 5px 20px;
+			border-radius: 5px;
+		}
 	}
 
 	.roster {
