@@ -9,6 +9,8 @@ $red: #ff4343;
 $neutral: #e2c362;
 $assassin: #000000;
 
+@import 'lobby-registration';
+
 body {
 	font-family: Arial;
 	padding: 0px;
@@ -465,46 +467,6 @@ body[user-role="operative"] {
 	}
 }
 
-/* Registration specific styling */
-.lobby-registration-page-cont {
-	.lobby-registration-inner {
-		display: grid;
-		grid-template-columns: 1fr 250px 50px 500px 1fr;
-		grid-template-rows: 1fr 35px 50px 50px 2fr;
-		height: 100%;
-	}
-	.text, input, .btn {
-		grid-column-start: 4;
-	}
-	#instructions {
-		grid-column: 2/5;
-	}
-	.text {
-		font-size: 22px;
-		margin-bottom: 5px;
-		text-align: left;
-		grid-row-start: 2;
-	}
-	input {
-		width: 100%;
-		height: 50px;
-		font-size: 24px;
-		padding: 10px;
-		grid-row-start: 3;
-	}
-	.btn {
-		margin-top: 10px;
-		font-size: 24px;
-		width: 40%;
-		grid-row-start: 4;
-	}
-	#createLobby {
-		grid-column-start: 2;
-		grid-row-start: 3;
-		width: 80%;
-	}
-}
-
 .roster-cont {
 	display: grid;
 	height: 100%;
@@ -513,7 +475,7 @@ body[user-role="operative"] {
 
 	.lobby {
 		font-size: 20px;
-		text-align: center;	
+		text-align: center;
 		grid-row-start: 2;
 		grid-column-start: 3;
 	}
