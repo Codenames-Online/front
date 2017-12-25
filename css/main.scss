@@ -419,6 +419,7 @@ body[user-role="operative"] {
 	font-weight: bold;
 	color: white;
 	cursor: pointer;
+	border: none;
 
 	&.green {
 		background-color: green;
@@ -536,7 +537,6 @@ body[user-role="operative"] {
 		text-align: center;
 	}
 	.btn {
-		height: 25px;
 		font-size: 20px;
 		width: 60%;
 		max-width: 300px;

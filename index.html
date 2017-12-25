@@ -23,7 +23,7 @@
 		<div class="registration-inner">
 			<div class="text">What is your name?</div>
 			<input type="text" placeholder="Enter your name">
-			<div class="btn green disabled" id="register">Enter</div>
+			<button class="btn green disabled" id="register">Enter</button>
 		</div>
 	</div>
 
@@ -34,12 +34,12 @@
 				<h2>Join an Existing Lobby</h2>
 				<input type="text" placeholder="Enter a lobby access code">
 				<span class="error-msg">We couldn’t find a lobby with that access code!</span>
-				<div class="btn green disabled" id="joinLobby">Join Lobby</div>
+				<button class="btn green disabled" id="joinLobby">Join Lobby</button>
 			</div>
 
 			<div class="create-lobby-cont">
 				<h3>Don't have a lobby to join?</h3>
-				<div class="btn green" id="createLobby">Create A Lobby</div>
+				<button class="btn green" id="createLobby">Create A Lobby</button>
 			</div>
 		</div>
 	</div>
@@ -64,8 +64,8 @@
 					<!-- Red team players inserted here -->
 				</div>
 			</div>
-			<div class="btn green" id="switch-teams">Switch Teams</div>
-			<div class="btn green disabled" id="start-game">Start</div>
+			<button class="btn green" id="switch-teams">Switch Teams</button>
+			<button class="btn green disabled" id="start-game">Start</button>
 			<div class="player-count-msg">
 				There need to be at least two players <br>
 				on each team to start a game.
@@ -130,8 +130,8 @@
 				<div class="guess-panel">
 					Pick your guess above based on your spymaster's clue.
 					<br><br>
-					<div class="btn green" id="submit-guess">Submit Guess</div>
-					<div class="btn red" id="end-turn">End Turn</div>
+					<button class="btn green" id="submit-guess">Submit Guess</button>
+					<button class="btn red" id="end-turn">End Turn</button>
 					<br><br>
 					Unanimous consensus on the guess is needed before submitting.
 				</div>
@@ -142,17 +142,17 @@
 		<div class="overlay-msg" id="word-on-board">
 			That word is on the board! Please try again!
 			<br><br>
-			<div class="btn red close-overlay">Close</div>
+			<button class="btn red close-overlay">Close</button>
 		</div>
 		<div class="overlay-msg" id="not-in-dict">
 			That word isn’t in our dictionary. Please try again!
 			<br><br>
-			<div class="btn red close-overlay">Close</div>
+			<button class="btn red close-overlay">Close</button>
 		</div>
 		<div class="overlay-msg" id="invalid-num-guesses">
 			That is not a valid number of guesses. Please try again!
 			<br><br>
-			<div class="btn red close-overlay">Close</div>
+			<button class="btn red close-overlay">Close</button>
 		</div>
 		<div class="overlay-msg" id="end-game-red">
 			<h1>Red Wins!</h1>

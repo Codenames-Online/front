@@ -105,7 +105,7 @@ function setHeader(team, clue) {
 function showClueInput() {
 	$('.clue .text').html('<div class="center">' +
 		'Give a one word clue: <input type="text" id="clue-word"> ' +
-		'# of cards: <input type="number" min=0 max=9 id="clue-num"> <div class="btn green" id="clue-submit">Submit</div>' +
+		'# of cards: <input type="number" min=0 max=9 id="clue-num"> <button class="btn green" id="clue-submit">Submit</button>' +
 	'</div>');
 
 	$('.clue .team-sect .turn-text').text('Your turn, spymaster');
