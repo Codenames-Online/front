@@ -1,0 +1,83 @@
+/**
+ * Styling for the roster page, where a user can view the rosters before
+ * starting a game, can view the access code, and can switch the team that they
+ * are on.
+ */
+
+.roster-page-cont {
+	.roster-cont {
+		display: grid;
+		height: 100%;
+		grid-template-rows: 10px 50px 50% 50px 60px 50px;
+		grid-template-columns: 1fr 20% 10% 20% 1fr;
+
+		.lobby {
+			font-size: 20px;
+			text-align: center;
+			margin-top: 16px;
+			grid-row-start: 2;
+			grid-column-start: 2;
+			grid-column-end: 5;
+
+			#access-code {
+				background: lightgrey;
+				padding: 5px 20px;
+				border-radius: 5px;
+			}
+		}
+
+		.roster {
+			padding: 20px 0px;
+			margin: 40px 0px;
+			color: white;
+			min-height: 250px;
+			border-radius: 10px;
+
+			&.blue {
+				background-color: $blue;
+
+				.player.self { color: $blue; }
+			}
+			&.red {
+				background-color: $red;
+
+				.player.self { color: $red; }
+			}
+			.title {
+				padding: 0px 30px;
+				font-size: 20px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.player {
+				padding: 4px 30px;
+
+				&.self { background-color: white; }
+			}
+		}
+		.roster.blue {
+			grid-column-start: 2;
+			grid-row-start: 3;
+		}
+		.roster.red {
+			grid-column-start: 4;
+			grid-row-start: 3;
+		}
+		.player-count-msg, .btn {
+			grid-column-start: 2;
+			grid-column-end: 5;
+		}
+		#switch-teams { grid-row-start: 4; }
+		#start-game { grid-row-start: 5; }
+		.player-count-msg {
+			grid-row-start: 6;
+			text-align: center;
+		}
+		.btn {
+			font-size: 20px;
+			width: 60%;
+			max-width: 300px;
+			margin: auto;
+		}
+	}
+}

@@ -10,6 +10,7 @@ $neutral: #e2c362;
 $assassin: #000000;
 
 @import 'lobby-registration';
+@import 'roster';
 
 body {
 	font-family: Arial;
@@ -433,113 +434,5 @@ body[user-role="operative"] {
 		cursor: default;
 		background-color: lightgrey;
 		&:hover { background-color: lightgrey; }
-	}
-}
-
-/* Registration specific styling */
-.registration-page-cont {
-	.registration-inner {
-		display: grid;
-		grid-template-columns: 1fr 500px 1fr;
-		grid-template-rows: 1fr 35px 50px 50px 2fr;
-		height: 100%;
-	}
-	.text, input, .btn {
-		grid-column-start: 2;
-	}
-	.text {
-		font-size: 22px;
-		margin-bottom: 5px;
-		text-align: left;
-		grid-row-start: 2;
-	}
-	input {
-		width: 100%;
-		height: 50px;
-		font-size: 24px;
-		padding: 10px;
-		grid-row-start: 3;
-	}
-	.btn {
-		margin-top: 10px;
-		font-size: 24px;
-		width: 40%;
-		grid-row-start: 4;
-	}
-}
-
-.roster-cont {
-	display: grid;
-	height: 100%;
-	grid-template-rows: 10px 50px 50% 50px 60px 50px;
-	grid-template-columns: 1fr 20% 10% 20% 1fr;
-
-	.lobby {
-		font-size: 20px;
-		text-align: center;
-		margin-top: 16px;
-		grid-row-start: 2;
-		grid-column-start: 2;
-		grid-column-end: 5;
-
-		#access-code {
-			background: lightgrey;
-			padding: 5px 20px;
-			border-radius: 5px;
-		}
-	}
-
-	.roster {
-		padding: 20px 0px;
-		margin: 40px 0px;
-		color: white;
-		min-height: 250px;
-		border-radius: 10px;
-
-		&.blue {
-			background-color: $blue;
-
-			.player.self { color: $blue; }
-		}
-		&.red {
-			background-color: $red;
-
-			.player.self { color: $red; }
-		}
-		.title {
-			padding: 0px 30px;
-			font-size: 20px;
-			margin-bottom: 10px;
-			text-align: center;
-		}
-		.player {
-			padding: 4px 30px;
-
-			&.self { background-color: white; }
-		}
-	}
-	.roster.blue {
-		grid-column-start: 2;
-		grid-row-start: 3;
-	}
-	.roster.red {
-		grid-column-start: 4;
-		grid-row-start: 3;
-	}
-	.player-count-msg, .btn {
-		grid-column-start: 2;
-		grid-column-end: 5;
-	}
-	#switch-teams { grid-row-start: 4; }
-	#start-game { grid-row-start: 5; }
-	.player-count-msg {
-		grid-row-start: 6;
-		text-align: center;
-	}
-	.btn {
-		font-size: 20px;
-		width: 60%;
-		max-width: 300px;
-		margin: auto;
 	}
 }
