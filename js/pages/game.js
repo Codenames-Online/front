@@ -112,6 +112,7 @@ function showClueInput() {
 	$('.clue .team-sect').addClass('your-turn');
 
 	$('#clue-submit').click(sendClue);
+	$('#clue-num').enterPress(sendClue); // pressing enter in the number field should send the clue
 }
 
 // Reads in the spymaster fields and sends a clue action
