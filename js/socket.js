@@ -1,10 +1,10 @@
 function setupSocket() {
 	// Create WebSocket connection - TODO: unhard code this
-	// socket = new WebSocket('ws://localhost:3000');
+	// socket = new WebSocket('wss://localhost:3000');
 	if(window.location.host.indexOf('localhost') > -1) //if on localhost
-		socket = new WebSocket('ws://localhost:8000');
+		socket = new WebSocket('wss://localhost:8000');
 	else
-		socket = new WebSocket('ws://codenames-backend.herokuapp.com/');
+		socket = new WebSocket('wss://codenames-backend.herokuapp.com/');
 
 	// Connection opened
 	socket.addEventListener('open', function (event) {});
